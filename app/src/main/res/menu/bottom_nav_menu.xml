@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/today"
+        android:icon="@drawable/ic_today_black_24dp"
+        android:title="today" />
+    <item
+        android:id="@+id/week"
+        android:icon="@drawable/ic_filter_7_black_24dp"
+        android:title="Week" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="setings" />
+</menu>
