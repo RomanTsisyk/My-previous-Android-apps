@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/today"
-        android:name="tsisyk.app.forecast.ui.today.TodayFragment"
+        android:name="tsisyk.app.forecast.ui.weather.current.TodayFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/week"
-        android:name="tsisyk.app.forecast.ui.week.WeekFragment"
+        android:name="tsisyk.app.forecast.ui.weather.week.WeekFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
