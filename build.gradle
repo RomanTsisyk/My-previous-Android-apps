@@ -7,19 +7,8 @@ buildscript {
         jcenter()
     }
 
-    ext {
-        roomVersion = '2.2.0-rc01'
-        archLifecycleVersion = '2.2.0-alpha05'
-        androidxArchVersion = '2.0.0'
-        coroutines = '1.2.0'
-        preference_version = "1.1.0"
-        ext.kodein_version = '5.2.0'
-    }
-
     dependencies {
-        def nav_version = "2.1.0"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
-
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.1.0"
         classpath 'com.android.tools.build:gradle:3.5.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong

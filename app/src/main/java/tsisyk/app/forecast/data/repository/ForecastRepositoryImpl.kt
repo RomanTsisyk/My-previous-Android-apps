@@ -12,11 +12,9 @@ import tsisyk.app.forecast.data.network.WeatherNetworkDataSource
 import tsisyk.app.forecast.data.network.response.CurrentWeatherResponse
 import java.util.*
 
-
-class ForecastRepositoryImpl
-
-private val currentWeatherDao: CurrentWeatherDao,
-private val weatherNetworkDataSource: WeatherNetworkDataSource
+class ForecastRepositoryImpl(
+    private val currentWeatherDao: CurrentWeatherDao,
+    private val weatherNetworkDataSource: WeatherNetworkDataSource
 ) : ForecastRepository {
 
     init {
