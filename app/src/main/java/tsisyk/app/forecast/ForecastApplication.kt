@@ -25,7 +25,7 @@ import tsisyk.app.forecast.ui.weather.current.CurrentWeatherViewModelFactory
 class ForecastApplication : Application(), KodeinAware {
     override val kodein = Kodein.lazy {
         import(androidXModule(this@ForecastApplication))
-
+        bind() from singleton { instance<ForecastDatabase>().futureWeatherDao() }
         bind() from singleton { ForecastDatabase(instance()) }
         bind() from singleton { instance<ForecastDatabase>().currentWeatherDao() }
         bind<ConnectivityInterceptor>() with singleton { ConnectivityInterceptorImpl(instance()) }
@@ -36,16 +36,12 @@ class ForecastApplication : Application(), KodeinAware {
         bind() from singleton { instance<ForecastDatabase>().weatherLocationDao() }
         bind() from provider { LocationServices.getFusedLocationProviderClient(instance<Context>()) }
         bind<LocationProvider>() with singleton { LocationProviderImpl(instance(), instance()) }
-        bind<ForecastRepository>() with singleton {
-            ForecastRepositoryImpl(
-                instance(),
-                instance(),
-                instance(),
-                instance()
-            )
-        }
+        bind<ForecastRepository>() with singleton { ForecastRepositoryImpl(instance(), instance(),
+            instance(), instance(), instance()) }
 
     }
+
+
 
     override fun onCreate() {
         super.onCreate()

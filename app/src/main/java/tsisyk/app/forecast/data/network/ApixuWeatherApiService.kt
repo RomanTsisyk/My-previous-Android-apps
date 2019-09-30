@@ -8,6 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 import tsisyk.app.forecast.data.network.response.CurrentWeatherResponse
+ import tsisyk.app.forecast.data.network.response.FutureWeatherResponse
 
 
 const val API_KEY = "89e8bd89085b41b7a4b142029180210"
@@ -19,6 +20,14 @@ interface ApixuWeatherApiService {
         @Query("q") location: String,
         @Query("lang") languageCode: String = "en"
     ): Deferred<CurrentWeatherResponse>
+
+    @GET("forecast.json")
+    fun getFutureWeather(
+        @Query("q") location: String,
+        @Query("days") days: Int,
+        @Query("lang") languageCode: String = "en"
+    ): Deferred<FutureWeatherResponse>
+
 
     companion object {
         operator fun invoke(
