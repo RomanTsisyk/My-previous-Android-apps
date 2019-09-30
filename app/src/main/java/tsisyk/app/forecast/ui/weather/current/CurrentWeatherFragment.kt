@@ -1,32 +1,26 @@
 package tsisyk.app.forecast.ui.weather.current
 
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import tsisyk.app.forecast.internal.glide.GlideApp
+import tsisyk.app.forecast.ui.base.ScopedFragment
 import kotlinx.android.synthetic.main.current_weather_fragment.*
 import kotlinx.coroutines.launch
-import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
+import org.kodein.di.android.x.closestKodein
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 import tsisyk.app.forecast.R
-import tsisyk.app.forecast.internal.GlideApp
-import tsisyk.app.forecast.ui.base.ScopeFragment
 
+class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
 
-@Suppress("DEPRECATION")
-class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
-
-    override val kodein: Kodein by kodein()  ///////////////////////////////////////////////////////////////
+    override val kodein by kodein()
     private val viewModelFactory: CurrentWeatherViewModelFactory by instance()
-
-    companion object {
-        fun newInstance() = CurrentWeatherFragment()
-    }
 
     private lateinit var viewModel: CurrentWeatherViewModel
 
@@ -39,8 +33,10 @@ class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel =
-            ViewModelProviders.of(this, viewModelFactory).get(CurrentWeatherViewModel::class.java)
+
+        viewModel = ViewModelProviders.of(this, viewModelFactory)
+            .get(CurrentWeatherViewModel::class.java)
+
         bindUI()
     }
 
@@ -53,8 +49,6 @@ class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
             if (location == null) return@Observer
             updateLocation(location.name)
         })
-
-
 
         currentWeather.observe(this@CurrentWeatherFragment, Observer {
             if (it == null) return@Observer
@@ -74,7 +68,7 @@ class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
     }
 
     private fun chooseLocalizedUnitAbbreviation(metric: String, imperial: String): String {
-        return if (viewModel.isMetric) metric else imperial
+        return if (viewModel.isMetricUnit) metric else imperial
     }
 
     private fun updateLocation(location: String) {
@@ -109,4 +103,5 @@ class CurrentWeatherFragment : ScopeFragment(), KodeinAware {
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("km", "mi.")
         textView_visibility.text = "Visibility: $visibilityDistance $unitAbbreviation"
     }
+
 }

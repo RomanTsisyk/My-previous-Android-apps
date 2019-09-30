@@ -1,10 +1,7 @@
 package tsisyk.app.forecast.data.provider
 
 import android.content.Context
-import android.content.SharedPreferences
-import androidx.preference.PreferenceManager
 import tsisyk.app.forecast.internal.UnitSystem
-
 
 const val UNIT_SYSTEM = "UNIT_SYSTEM"
 

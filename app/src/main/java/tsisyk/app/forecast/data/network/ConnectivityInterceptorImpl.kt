@@ -2,12 +2,12 @@ package tsisyk.app.forecast.data.network
 
 import android.content.Context
 import android.net.ConnectivityManager
+import tsisyk.app.forecast.internal.NoConnectivityException
 import okhttp3.Interceptor
 import okhttp3.Response
-import java.io.IOException
-import tsisyk.app.forecast.internal.NoConnectivityException
 
-internal class ConnectivityInterceptorImpl(context: Context
+class ConnectivityInterceptorImpl(
+    context: Context
 ) : ConnectivityInterceptor {
 
     private val appContext = context.applicationContext
@@ -20,7 +20,7 @@ internal class ConnectivityInterceptorImpl(context: Context
 
     private fun isOnline(): Boolean {
         val connectivityManager = appContext.getSystemService(Context.CONNECTIVITY_SERVICE)
-                as ConnectivityManager
+        as ConnectivityManager
         val networkInfo = connectivityManager.activeNetworkInfo
         return networkInfo != null && networkInfo.isConnected
     }

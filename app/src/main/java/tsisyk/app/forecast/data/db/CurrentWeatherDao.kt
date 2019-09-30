@@ -7,8 +7,8 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import tsisyk.app.forecast.data.db.entity.CURRENT_WEATHER_ID
 import tsisyk.app.forecast.data.db.entity.CurrentWeatherEntry
-import tsisyk.app.forecast.data.db.unitlocalized.ImperialCurrentWeatherEntry
-import tsisyk.app.forecast.data.db.unitlocalized.MetricCurrentWeatherEntry
+import tsisyk.app.forecast.data.db.unitlocalized.current.ImperialCurrentWeatherEntry
+import tsisyk.app.forecast.data.db.unitlocalized.current.MetricCurrentWeatherEntry
 
 
 @Dao

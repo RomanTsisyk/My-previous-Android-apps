@@ -1,4 +1,4 @@
-package tsisyk.app.forecast.ui.weather.future.detail
+package tsisyk.app.forecast.weather.future.detail
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
 import tsisyk.app.forecast.R
+import tsisyk.app.forecast.ui.weather.future.detail.FutureDetailWeatherViewModel
 
 class FutureDetailWeatherFragment : Fragment() {
 

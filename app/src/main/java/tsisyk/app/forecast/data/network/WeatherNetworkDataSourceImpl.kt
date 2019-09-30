@@ -10,7 +10,8 @@ import tsisyk.app.forecast.internal.NoConnectivityException
 const val FORECAST_DAYS_COUNT = 7
 
 class WeatherNetworkDataSourceImpl(
-    private val apixuWeatherApiService: ApixuWeatherApiService) : WeatherNetworkDataSource {
+    private val apixuWeatherApiService: ApixuWeatherApiService
+) : WeatherNetworkDataSource {
 
     private val _downloadedCurrentWeather = MutableLiveData<CurrentWeatherResponse>()
     override val downloadedCurrentWeather: LiveData<CurrentWeatherResponse>

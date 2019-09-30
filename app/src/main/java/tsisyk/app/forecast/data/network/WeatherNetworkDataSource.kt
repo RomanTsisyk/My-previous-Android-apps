@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import tsisyk.app.forecast.data.network.response.CurrentWeatherResponse
 import tsisyk.app.forecast.data.network.response.FutureWeatherResponse
 
-interface WeatherNetworkDataSource {
 
+interface WeatherNetworkDataSource {
     val downloadedCurrentWeather: LiveData<CurrentWeatherResponse>
     val downloadedFutureWeather: LiveData<FutureWeatherResponse>
 
@@ -13,7 +13,6 @@ interface WeatherNetworkDataSource {
         location: String,
         languageCode: String
     )
-
     suspend fun fetchFutureWeather(
         location: String,
         languageCode: String

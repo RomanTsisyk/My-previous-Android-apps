@@ -7,11 +7,10 @@ import android.content.pm.PackageManager
 import android.location.Location
 import androidx.core.content.ContextCompat
 import com.google.android.gms.location.FusedLocationProviderClient
-import kotlinx.coroutines.Deferred
 import tsisyk.app.forecast.data.db.entity.WeatherLocation
 import tsisyk.app.forecast.internal.LocationPermissionNotGrantedException
 import tsisyk.app.forecast.internal.asDeferred
-
+import kotlinx.coroutines.Deferred
 
 const val USE_DEVICE_LOCATION = "USE_DEVICE_LOCATION"
 const val CUSTOM_LOCATION = "CUSTOM_LOCATION"
@@ -20,8 +19,8 @@ class LocationProviderImpl(
     private val fusedLocationProviderClient: FusedLocationProviderClient,
     context: Context
 ) : PreferenceProvider(context), LocationProvider {
-    private val appContext = context.applicationContext
 
+    private val appContext = context.applicationContext
 
     override suspend fun hasLocationChanged(lastWeatherLocation: WeatherLocation): Boolean {
         val deviceLocationChanged = try {
@@ -30,7 +29,8 @@ class LocationProviderImpl(
             false
         }
 
-        return deviceLocationChanged || hasCustomLocationChanged(lastWeatherLocation)    }
+        return deviceLocationChanged || hasCustomLocationChanged(lastWeatherLocation)
+    }
 
     override suspend fun getPreferredLocationString(): String {
         if (isUsingDeviceLocation()) {
@@ -85,5 +85,6 @@ class LocationProviderImpl(
 
     private fun hasLocationPermission(): Boolean {
         return ContextCompat.checkSelfPermission(appContext,
-            Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED    }
+            Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+    }
 }
