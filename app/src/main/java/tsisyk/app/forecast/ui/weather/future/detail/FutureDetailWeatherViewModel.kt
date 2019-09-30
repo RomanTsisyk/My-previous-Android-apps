@@ -1,10 +1,9 @@
 package tsisyk.app.forecast.ui.weather.future.detail
 
-import androidx.lifecycle.ViewModel;
-import org.threeten.bp.LocalDate
 import tsisyk.app.forecast.data.provider.UnitProvider
 import tsisyk.app.forecast.data.repository.ForecastRepository
 import tsisyk.app.forecast.internal.lazyDeferred
+import org.threeten.bp.LocalDate
 import tsisyk.app.forecast.ui.base.WeatherViewModel
 
 class FutureDetailWeatherViewModel(

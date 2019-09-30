@@ -2,6 +2,7 @@ package tsisyk.app.forecast.data.db.entity
 
 import androidx.room.Embedded
 import com.google.gson.annotations.SerializedName
+import tsisyk.app.forecast.data.db.entity.Condition
 
 data class Day(
         @SerializedName("avgtemp_c")
@@ -13,7 +14,7 @@ data class Day(
         @SerializedName("avgvis_miles")
     val avgvisMiles: Double,
         @Embedded(prefix = "condition_")
-    val condition: Condition,
+    val condition: tsisyk.app.forecast.data.db.entity.Condition,
         @SerializedName("maxtemp_c")
     val maxtempC: Double,
         @SerializedName("maxtemp_f")

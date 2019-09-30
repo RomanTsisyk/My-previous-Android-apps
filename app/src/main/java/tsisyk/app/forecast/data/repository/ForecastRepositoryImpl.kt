@@ -2,6 +2,7 @@ package tsisyk.app.forecast.data.repository
 
 import androidx.lifecycle.LiveData
 import tsisyk.app.forecast.data.db.CurrentWeatherDao
+import tsisyk.app.forecast.data.db.FutureWeatherDao
 import tsisyk.app.forecast.data.db.WeatherLocationDao
 import tsisyk.app.forecast.data.db.entity.WeatherLocation
 import tsisyk.app.forecast.data.db.unitlocalized.current.UnitSpecificCurrentWeatherEntry
@@ -18,7 +19,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.threeten.bp.LocalDate
 import org.threeten.bp.ZonedDateTime
-import tsisyk.app.forecast.data.db.FutureWeatherDao
 import java.util.*
 
 class ForecastRepositoryImpl(
@@ -27,7 +27,7 @@ class ForecastRepositoryImpl(
     private val weatherLocationDao: WeatherLocationDao,
     private val weatherNetworkDataSource: WeatherNetworkDataSource,
     private val locationProvider: LocationProvider
-) : ForecastRepository {
+    ) : ForecastRepository {
 
     init {
         weatherNetworkDataSource.apply {
@@ -139,5 +139,4 @@ class ForecastRepositoryImpl(
         val futureWeatherCount = futureWeatherDao.countFutureWeather(today)
         return futureWeatherCount < FORECAST_DAYS_COUNT
     }
-
 }

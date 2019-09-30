@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tsisyk.app.forecast.ui.weather.future.list.FutureListWeatherFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.weather.future.list.FutureListWeatherFragment">
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        app:constraint_referenced_ids="progressBar_loading"
+        app:constraint_referenced_ids="progressBar_loading, textView_loading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,6 +49,5 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,15 +1,17 @@
 package tsisyk.app.forecast.ui.weather.future.list
 
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import tsisyk.app.forecast.ui.weather.future.list.FutureListWeatherFragmentDirections
+import tsisyk.app.forecast.R
+
 import tsisyk.app.forecast.data.db.LocalDateConverter
 import tsisyk.app.forecast.data.db.unitlocalized.future.list.UnitSpecificSimpleFutureWeatherEntry
 import tsisyk.app.forecast.ui.base.ScopedFragment
@@ -20,15 +22,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
-import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 import org.threeten.bp.LocalDate
-import tsisyk.app.forecast.R
 
 class FutureListWeatherFragment : ScopedFragment(), KodeinAware {
 
-    override val kodein by kodein()
+    override val kodein by closestKodein()
     private val viewModelFactory: FutureListWeatherViewModelFactory by instance()
+
     private lateinit var viewModel: FutureListWeatherViewModel
 
     override fun onCreateView(
@@ -89,8 +90,17 @@ class FutureListWeatherFragment : ScopedFragment(), KodeinAware {
         }
 
         groupAdapter.setOnItemClickListener { item, view ->
-            Toast.makeText(this@FutureListWeatherFragment.context, "Clicked", Toast.LENGTH_SHORT).show()
+            (item as? FutureWeatherItem)?.let {
+                showWeatherDetail(it.weatherEntry.date, view)
+            }
         }
     }
+
+    private fun showWeatherDetail(date: LocalDate, view: View) {
+        val dateString = LocalDateConverter.dateToString(date)!!
+        val actionDetail = FutureListWeatherFragmentDirections.actionDetail(dateString)
+        Navigation.findNavController(view).navigate(actionDetail)
+    }
+
 
 }

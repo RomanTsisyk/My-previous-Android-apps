@@ -7,8 +7,8 @@ import tsisyk.app.forecast.data.repository.ForecastRepository
 
 
 class CurrentWeatherViewModelFactory(
-        private val forecastRepository: ForecastRepository,
-        private val unitProvider: UnitProvider
+    private val forecastRepository: ForecastRepository,
+    private val unitProvider: UnitProvider
 ) : ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")

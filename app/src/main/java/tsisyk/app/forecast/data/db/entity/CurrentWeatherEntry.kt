@@ -16,7 +16,7 @@ data class CurrentWeatherEntry(
         @SerializedName("is_day")
     val isDay: Int,
         @Embedded(prefix = "condition_")
-    val condition: Condition,
+    val condition: tsisyk.app.forecast.data.db.entity.Condition,
         @SerializedName("wind_mph")
     val windMph: Double,
         @SerializedName("wind_kph")

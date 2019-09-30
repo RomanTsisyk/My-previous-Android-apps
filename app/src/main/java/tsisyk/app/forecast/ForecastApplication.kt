@@ -5,11 +5,6 @@ import android.content.Context
 import android.preference.PreferenceManager
 import com.google.android.gms.location.LocationServices
 import com.jakewharton.threetenabp.AndroidThreeTen
-import org.kodein.di.Kodein
-import org.kodein.di.KodeinAware
-import org.kodein.di.android.x.androidXModule
-import org.kodein.di.generic.*
-import org.threeten.bp.LocalDate
 import tsisyk.app.forecast.data.db.ForecastDatabase
 import tsisyk.app.forecast.data.network.*
 import tsisyk.app.forecast.data.provider.LocationProvider
@@ -21,6 +16,11 @@ import tsisyk.app.forecast.data.repository.ForecastRepositoryImpl
 import tsisyk.app.forecast.ui.weather.current.CurrentWeatherViewModelFactory
 import tsisyk.app.forecast.ui.weather.future.detail.FutureDetailWeatherViewModelFactory
 import tsisyk.app.forecast.ui.weather.future.list.FutureListWeatherViewModelFactory
+import org.kodein.di.Kodein
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.x.androidXModule
+import org.kodein.di.generic.*
+import org.threeten.bp.LocalDate
 
 
 class ForecastApplication : Application(), KodeinAware {
@@ -46,6 +46,6 @@ class ForecastApplication : Application(), KodeinAware {
     override fun onCreate() {
         super.onCreate()
         AndroidThreeTen.init(this)
-        PreferenceManager.setDefaultValues(this, R.xml.preferences, false)
+        PreferenceManager.setDefaultValues(this, tsisyk.app.forecast.R.xml.preferences, false)
     }
 }

@@ -2,24 +2,31 @@ package tsisyk.app.forecast.ui.weather.current
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import tsisyk.app.forecast.R
+
+import tsisyk.app.forecast.data.network.ApixuWeatherApiService
+import tsisyk.app.forecast.data.network.ConnectivityInterceptorImpl
+import tsisyk.app.forecast.data.network.WeatherNetworkDataSourceImpl
 import tsisyk.app.forecast.internal.glide.GlideApp
 import tsisyk.app.forecast.ui.base.ScopedFragment
 import kotlinx.android.synthetic.main.current_weather_fragment.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
-import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
-import tsisyk.app.forecast.R
 
 class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
 
-    override val kodein by kodein()
+    override val kodein by closestKodein()
     private val viewModelFactory: CurrentWeatherViewModelFactory by instance()
 
     private lateinit var viewModel: CurrentWeatherViewModel

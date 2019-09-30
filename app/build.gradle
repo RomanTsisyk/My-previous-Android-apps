@@ -50,7 +50,7 @@ dependencies {
     def coroutines_version = "1.2.1"
     def retrofit_version = "2.6.0"
     def lifecycle_version = "2.1.0"
-    def kodein_version = "6.2.1"
+    def kodein_version = "5.2.0"
     def glide_version = "4.10.0"
     def groupie_version = "2.5.0"
     def room_version = "2.1.0"

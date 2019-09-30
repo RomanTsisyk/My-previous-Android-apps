@@ -8,8 +8,8 @@ import tsisyk.app.forecast.internal.lazyDeferred
 
 
 abstract class WeatherViewModel(
-        private val forecastRepository: ForecastRepository,
-        unitProvider: UnitProvider
+    private val forecastRepository: ForecastRepository,
+    unitProvider: UnitProvider
 ) : ViewModel() {
 
     private val unitSystem = unitProvider.getUnitSystem()

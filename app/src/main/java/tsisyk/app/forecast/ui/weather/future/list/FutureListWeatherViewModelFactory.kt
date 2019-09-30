@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import tsisyk.app.forecast.data.provider.UnitProvider
 import tsisyk.app.forecast.data.repository.ForecastRepository
 
+
 class FutureListWeatherViewModelFactory(
     private val forecastRepository: ForecastRepository,
     private val unitProvider: UnitProvider
