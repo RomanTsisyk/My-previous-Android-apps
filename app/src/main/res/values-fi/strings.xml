@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Äänipäiväkirja</string>
+    <string name="cancel">Peruuttaa</string>
+    <string name="default_name_record">ennätys#_</string>
+    <string name="error_start">Tallennusohjelma on käynnissä taustalla. Sulje se ensin.</string>
+    <string name="file_exists">Tiedostonimi on jo olemassa</string>
+    <string name="list_name">Ääniluettelo</string>
+    <string name="name_record">Recordnaam</string>
+    <string name="no_save_button">Älä tallenna tätä tietuetta</string>
+    <string name="no_save_file">Älä tallenna</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">Nimeä uudelleen</string>
+    <string name="saving">Tallentaa...</string>
+    <string name="start_recording">Aloita tallennus napsauttamalla painiketta</string>
+    <string name="state_pause">Tauko</string>
+    <string name="state_recording">Äänite</string>
+</resources>

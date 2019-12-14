@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/activity_dictaphone_stop_watch"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_circle_not_solid_red"
+        android:gravity="center"
+        android:text="00:00:00"
+        android:textColor="#1CA4BA"
+        android:textSize="40sp"
+        android:elevation="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_dictaphone_state_dictaphone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activity_dictaphone_state_dictaphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/activity_dictaphone_container_for_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="@string/start_recording"
+        android:textColor="@color/colorText"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/activity_dictaphone_container_for_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/activity_dictaphone_container_for_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85">
+
+        <tsisyk.app.diary.views.CustomImageButton
+            android:id="@+id/activity_dictaphone_save_btn"
+            style="@style/ImageButtonCircleDictaphone"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_toLeftOf="@id/activity_dictaphone_recording_stop__btn"
+            android:enabled="false"
+            android:padding="16dp"
+            android:src="@drawable/save"/>
+
+        <tsisyk.app.diary.views.CustomImageButton
+            android:id="@+id/activity_dictaphone_recording_stop__btn"
+            style="@style/ImageButtonCircleDictaphone"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:src="@drawable/ic_micro" />
+
+        <tsisyk.app.diary.views.CustomImageButton
+            android:id="@+id/activity_dictaphone_list_delete__btn"
+            style="@style/ImageButtonCircleDictaphone"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_toRightOf="@id/activity_dictaphone_recording_stop__btn"
+            android:src="@drawable/ic_list" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/app_name"
+        android:textColor="@color/colorText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

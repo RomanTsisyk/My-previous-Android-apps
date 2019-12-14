@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Diario audio</string>
+    <string name="cancel">Annulla</string>
+    <string name="default_name_record">disco#_</string>
+    <string name="error_start">L\'applicazione di registrazione è in esecuzione in background. Chiudilo per primo</string>
+    <string name="file_exists">Il nome file esiste già</string>
+    <string name="list_name">Lista audio</string>
+    <string name="name_record">Registra il nome</string>
+    <string name="no_save_button">Non salvare questo record</string>
+    <string name="no_save_file">Non salvare</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">Rinominare</string>
+    <string name="saving">Salvataggio...</string>
+    <string name="start_recording">Fare clic sul pulsante per avviare la registrazione</string>
+    <string name="state_pause">Pausa</string>
+    <string name="state_recording">Registrazione</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Diario de audio</string>
+    <string name="cancel">Cancelar</string>
+    <string name="default_name_record">grabar#_</string>
+    <string name="error_start">La aplicación de grabación se está ejecutando en segundo plano. Ciérralo primero.</string>
+    <string name="file_exists">El nombre de archivo ya existe</string>
+    <string name="list_name">Lista de audio</string>
+    <string name="name_record">Nombre de registro</string>
+    <string name="no_save_button">Ekki geyma þessa skrá</string>
+    <string name="ok">OK</string>
+    <string name="no_save_file">No guardar</string>
+    <string name="rename_file">Rebautizar</string>
+    <string name="saving">Ahorro...</string>
+    <string name="start_recording">Haga clic en el botón para iniciar la grabación</string>
+    <string name="state_pause">Pausa</string>
+    <string name="state_recording">Grabación</string>
+</resources>

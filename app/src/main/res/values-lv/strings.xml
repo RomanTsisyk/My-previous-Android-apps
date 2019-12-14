@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Audio dienasgrāmata</string>
+    <string name="cancel">Atcelt</string>
+    <string name="default_name_record">ieraksts#_</string>
+    <string name="error_start">Ierakstīšanas programma darbojas fonā. Aizveriet to vispirms.</string>
+    <string name="file_exists">Iam enim Filename</string>
+    <string name="list_name">Audio saraksts</string>
+    <string name="name_record">Ieraksta nosaukums</string>
+    <string name="no_save_button">Nesaglabājiet šo ierakstu</string>
+    <string name="no_save_file">Nesaglabājiet</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">secunda nomine</string>
+    <string name="saving">taupymas ...</string>
+    <string name="start_recording">Click puga pyga ut satus muniat</string>
+    <string name="state_pause">Pauzė</string>
+    <string name="state_recording">Ierakstīšana</string>
+</resources>

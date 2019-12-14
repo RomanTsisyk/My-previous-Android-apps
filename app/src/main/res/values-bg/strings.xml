@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Аудио дневник</string>
+    <string name="cancel">Адмена</string>
+    <string name="default_name_record">рекорд#_</string>
+    <string name="error_start">Приложението за запис се изпълнява във фонов режим. Затворете го първо.</string>
+    <string name="file_exists">Името на файла вече съществува</string>
+    <string name="list_name">Списък с аудио</string>
+    <string name="name_record">Име на запис</string>
+    <string name="no_save_button">Не записвайте този запис</string>
+    <string name="no_save_file">Не запазвайте</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">преименувам</string>
+    <string name="saving">Се запазва ...</string>
+    <string name="start_recording">Натиснете бутона, за да започнете да записвате</string>
+    <string name="state_pause">пауза</string>
+    <string name="state_recording">запис</string>
+</resources>

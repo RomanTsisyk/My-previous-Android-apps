@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Audio Diary</string>
+    <string name="cancel">annuleren</string>
+    <string name="default_name_record">record#_</string>
+    <string name="error_start">De opnametoepassing wordt op de achtergrond uitgevoerd. Sluit het eerst.</string>
+    <string name="file_exists">Bestandsnaam bestaat al</string>
+    <string name="list_name">Audioliste</string>
+    <string name="name_record">Recordnaam</string>
+    <string name="no_save_button">Sla deze record niet op</string>
+    <string name="no_save_file">Niet opslaan</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">andere naam geven</string>
+    <string name="saving">Besparing...</string>
+    <string name="start_recording">Klik op de knop om te beginnen met opnemen</string>
+    <string name="state_pause">Pauze</string>
+    <string name="state_recording">opname</string>
+</resources>

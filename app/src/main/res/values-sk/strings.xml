@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zvukový diár</string>
+    <string name="cancel">Zrušiť</string>
+    <string name="default_name_record">record#_</string>
+    <string name="error_start">Aplikácia nahrávania je spustená na pozadí. Najskôr ho zatvorte.</string>
+    <string name="file_exists">Názov súboru už existuje</string>
+    <string name="list_name">Zvukový zoznam</string>
+    <string name="name_record">Názov záznamu</string>
+    <string name="no_save_button">Neukladajte tento záznam</string>
+    <string name="no_save_file">Neuchovávajte</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">premenovať</string>
+    <string name="saving">Úsporné ...</string>
+    <string name="start_recording">Kliknutím na tlačidlo spustíte nahrávanie</string>
+    <string name="state_pause">Pauza</string>
+    <string name="state_recording">záznam</string>
+</resources>

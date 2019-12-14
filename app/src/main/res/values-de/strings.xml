@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Audio-Tagebuch</string>
+    <string name="cancel">Stornieren</string>
+    <string name="default_name_record">Aufzeichnung#_</string>
+    <string name="error_start">Die Aufnahmeanwendung läuft im Hintergrund. Schließen Sie es zuerst.</string>
+    <string name="file_exists">Dateiname existiert bereits</string>
+    <string name="list_name">Audioliste</string>
+    <string name="name_record">Datensatzname</string>
+    <string name="no_save_button">Speichern Sie diesen Datensatz nicht</string>
+    <string name="no_save_file">Speichern Sie nicht</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">Umbenennen</string>
+    <string name="saving">Speichern ...</string>
+    <string name="start_recording">Klicken Sie auf die Schaltfläche, um die Aufnahme zu starten</string>
+    <string name="state_pause">Pauze</string>
+    <string name="state_recording">Aufzeichnung</string>
+</resources>

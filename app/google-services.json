@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "941834276528",
+    "firebase_url": "https://free-audio-diary.firebaseio.com",
+    "project_id": "free-audio-diary",
+    "storage_bucket": "free-audio-diary.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941834276528:android:3a24ea859bd7700c4d3575",
+        "android_client_info": {
+          "package_name": "tsisyk.app.diary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941834276528-f8c0cqtnkrqmi3pjm6t6lful9p55dfe6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsGbcDswEMeAl2KV9PJUrriQdKTybdyp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941834276528-f8c0cqtnkrqmi3pjm6t6lful9p55dfe6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

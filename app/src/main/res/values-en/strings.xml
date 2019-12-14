@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Audio Diary</string>
+    <string name="list_name">Audio list</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="default_name_record">record#_</string>
+    <string name="name_record">Record Name</string>
+    <string name="rename_file">Rename</string>
+    <string name="file_exists">Filename already exists</string>
+    <string name="start_recording">Click the button to start recording</string>
+    <string name="no_save_file">Don\'t save</string>
+    <string name="no_save_button">Don\'t save this record</string>
+    <string name="state_recording">Recording</string>
+    <string name="state_pause">Pause</string>
+
+    <string name="saving">Saving…</string>
+
+    <string name="error_start">The recording application is running in the background. Close it first.</string>
+
+</resources>

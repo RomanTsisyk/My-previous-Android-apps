@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Journal audio</string>
+    <string name="cancel">Annuler</string>
+    <string name="default_name_record">record#_</string>
+    <string name="error_start">L\'application d\'enregistrement est en cours d\'exécution en arrière-plan. Fermez-le d\'abord.</string>
+    <string name="file_exists">Le nom de fichier existe déjà</string>
+    <string name="list_name">Liste audio</string>
+    <string name="name_record">Nom d\'enregistrement</string>
+    <string name="no_save_button">Ne sauvegardez pas cet enregistrement</string>
+    <string name="no_save_file">Ne pas enregistrer</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">Renommer</string>
+    <string name="saving">Économie...</string>
+    <string name="start_recording">Cliquez sur le bouton pour commencer l\'enregistrement</string>
+    <string name="state_pause">Pause</string>
+    <string name="state_recording">Enregistrement</string>
+</resources>

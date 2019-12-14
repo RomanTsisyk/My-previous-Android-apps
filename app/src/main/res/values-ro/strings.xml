@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jurnal audio</string>
+    <string name="cancel">Anulare</string>
+    <string name="default_name_record">record#_</string>
+    <string name="error_start">Aplicația de înregistrare rulează în fundal. Închideți-o mai întâi.</string>
+    <string name="file_exists">Numele fișierului există deja</string>
+    <string name="list_name">Lista audio</string>
+    <string name="name_record">Numele înregistrării</string>
+    <string name="no_save_button">Nu salvați această înregistrare</string>
+    <string name="no_save_file">Nu salvați</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">Redenumiți</string>
+    <string name="saving">Economisire...</string>
+    <string name="start_recording">Faceți clic pe buton pentru a începe înregistrarea</string>
+    <string name="state_pause">Pauză</string>
+    <string name="state_recording">Înregistrare</string>
+</resources>
