@@ -2,22 +2,21 @@ package tsisyk.app.kanbanboard.data
 
 import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.Room.databaseBuilder
 import androidx.room.RoomDatabase
 
 
 @Database(
-    entities = [Note::class],
+    entities = [Task::class],
     version = 1
 )
-abstract class NoteDatabase : RoomDatabase () {
+abstract class TaskDatabase : RoomDatabase () {
 
-    abstract fun getNoteDao(): NoteDao
+    abstract fun getTaskDao(): TaskDao
 
     companion object {
         @Volatile
-        private var instance: NoteDatabase? = null
+        private var instance: TaskDatabase? = null
         private val LOCK = Any()
 
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
@@ -26,7 +25,7 @@ abstract class NoteDatabase : RoomDatabase () {
 
         private fun buildDatabase(context: Context) = databaseBuilder(
             context.applicationContext,
-            NoteDatabase::class.java,
+            TaskDatabase::class.java,
             "board"
         ).build()
     }

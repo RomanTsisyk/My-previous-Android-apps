@@ -5,9 +5,10 @@ import androidx.room.PrimaryKey
 
 
 @Entity
-data class Note(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+data class Task(
     val title: String,
-    val note: String
-)
+    val description: String
+) {
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
+}

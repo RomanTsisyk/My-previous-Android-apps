@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="tsisyk.app.kanbanboard.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_addNewNoteFragment"
+            app:destination="@+id/addNewNoteFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -22,4 +26,13 @@
         android:name="tsisyk.app.kanbanboard.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/addNewNoteFragment"
+        android:name="tsisyk.app.kanbanboard.ui.AddNewtaskFragment"
+        android:label="fragment_add_new_note"
+        tools:layout="@layout/fragment_add_new_task" >
+        <action
+            android:id="@+id/action_addNewNoteFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 </navigation>

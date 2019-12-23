@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="400dp"
+    tools:context=".ui.AddNewtaskFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            android:background="@drawable/noteback"
+            android:padding="64dp">
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextTitle"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Task  title"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="32dp" />
+
+            <EditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Task description"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.671"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTitle" />
+
+            <!--        <com.google.android.material.chip.Chip-->
+            <!--            style="@style/Widget.MaterialComponents.Chip.Entry"-->
+            <!--            android:layout_width="97dp"-->
+            <!--            android:layout_height="22dp"-->
+            <!--            android:text="hello_world"-->
+            <!--            app:chipIcon="@mipmap/ic_launcher"-->
+            <!--            app:layout_constraintBottom_toTopOf="@+id/button"-->
+            <!--            app:layout_constraintEnd_toEndOf="parent"-->
+            <!--            app:layout_constraintStart_toStartOf="parent"-->
+            <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
