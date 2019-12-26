@@ -28,12 +28,11 @@ class TaskAdapter(private val tasks: List<Task>) :
         holder.view.cardTastDescription.text = tasks[position].description
 
         holder.view.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeToNew()
-       //     action.arguments = tasks[position]
-            Navigation.findNavController(it).navigate(action)
+         //   val action2 = HomeFragmentDirections.actionHomeToNew()
+            val cationNumber = HomeFragmentDirections.actionHomeToNew(tsakNote = tasks[position])
+            Navigation.findNavController(it).navigate(cationNumber)
         }
     }
-
 
 
     class TaskViewHolder(val view: View) : RecyclerView.ViewHolder(view)

@@ -31,13 +31,13 @@ class HomeFragment : BaseFragment() {
 
         launch {
             context?.let{
-                val notes = TaskDatabase(it).getTaskDao().getAll()
-                recycleView.adapter = TaskAdapter(notes)
+                val tasks = TaskDatabase(it).getTaskDao().getAll()
+                recycleView.adapter = TaskAdapter(tasks)
             }
         }
 
 
-        addNote.setOnClickListener {
+        addTask.setOnClickListener {
             val action =
                 HomeFragmentDirections.actionHomeToNew()
             Navigation.findNavController(it).navigate(action)

@@ -8,6 +8,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
+        tools:layout="@layout/fragment_home"
         android:name="tsisyk.app.kanbanboard.ui.HomeFragment"
         android:label="@string/title_home">
         <action
@@ -28,7 +29,7 @@
             app:destination="@id/navigation_home" />
 
         <argument
-            android:name="Task"
+            android:name="tsakNote"
             app:argType="tsisyk.app.kanbanboard.data.Task"
             app:nullable="true"
             android:defaultValue="@null" />

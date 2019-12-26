@@ -25,6 +25,12 @@ class AddNewTaskFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        arguments?.let {
+            task = AddNewTaskFragmentArgs.fromBundle(it).tsakNote
+            editTextTitle.setText(task?.title)
+            editTextDescription.setText(task?.description)
+        }
+
         buttonSave.setOnClickListener { view ->
             val descriptionTask = editTextDescription.text.trim().toString()
             val titleTask = editTextTitle.text.trim().toString()
@@ -49,19 +55,21 @@ class AddNewTaskFragment : BaseFragment() {
 
                     if (task == null) {
                         TaskDatabase(it).getTaskDao().addTask(myTask)
-                        it.toast("New Task Saved")
+                 //       it.toast("New Task Saved")
                     } else {
                         myTask.id = task!!.id
                         TaskDatabase(it).getTaskDao().updateTask(myTask)
-                        it.toast("Current Task Updated")
+                  //      it.toast("Current Task Updated")
                     }
 
 
-                    val action = AddNewTaskFragmentDirections.actionAddNewNoteFragmentToNavigationHome()
-                    Navigation.findNavController(view).navigate(action)
+
                 }
+
             }
 
+            val action = AddNewTaskFragmentDirections.actionAddNewNoteFragmentToNavigationHome()
+            Navigation.findNavController(view).navigate(action)
         }
     }
 
@@ -73,12 +81,10 @@ class AddNewTaskFragment : BaseFragment() {
         return super.onOptionsItemSelected(item)
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu, menu)
     }
-
 
     private fun deleteTask() {
         AlertDialog.Builder(context).apply {
