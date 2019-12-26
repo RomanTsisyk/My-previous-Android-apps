@@ -7,11 +7,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlin.coroutines.CoroutineContext
 
-abstract class Basefragment : Fragment(), CoroutineScope {
+abstract class BaseFragment : Fragment(), CoroutineScope {
 
-    lateinit var job: Job
+    private lateinit var job: Job
     override val coroutineContext: CoroutineContext
-        get() = job + Dispatchers.IO
+        get() = job + Dispatchers.Default
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

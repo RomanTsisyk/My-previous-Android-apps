@@ -1,4 +1,4 @@
-package tsisyk.app.kanbanboard.ui.home
+package tsisyk.app.kanbanboard.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +10,8 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.coroutines.launch
 import tsisyk.app.kanbanboard.R
 import tsisyk.app.kanbanboard.data.TaskDatabase
-import tsisyk.app.kanbanboard.ui.Basefragment
-import tsisyk.app.kanbanboard.ui.TaskAdapter
 
-class HomeFragment : Basefragment() {
+class HomeFragment : BaseFragment() {
 
 
     override fun onCreateView(
@@ -28,19 +26,22 @@ class HomeFragment : Basefragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        addNote.setOnClickListener {
-            val action = HomeFragmentDirections.actionNavigationHomeToAddNewNoteFragment()
-            Navigation.findNavController(it).navigate(action)
-        }
-        TaskDatabase(activity!!).getTaskDao()
+        recycleView.setHasFixedSize(true)
+        recycleView.layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
 
         launch {
-            context?.apply { val task = TaskDatabase(this).getTaskDao().getAll()
-            recycleView.adapter = TaskAdapter(task) }
+            context?.let{
+                val notes = TaskDatabase(it).getTaskDao().getAll()
+                recycleView.adapter = TaskAdapter(notes)
+            }
         }
 
-        recycleView.setHasFixedSize(true)
-        recycleView.layoutManager =
-            StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
+
+        addNote.setOnClickListener {
+            val action =
+                HomeFragmentDirections.actionHomeToNew()
+            Navigation.findNavController(it).navigate(action)
+        }
+
     }
 }

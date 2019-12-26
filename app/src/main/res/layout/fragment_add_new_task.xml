@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="400dp"
     android:layout_height="400dp"
-    tools:context=".ui.AddNewtaskFragment">
+    tools:context=".ui.AddNewTaskFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_gravity="center"
