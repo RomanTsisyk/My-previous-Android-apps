@@ -33,8 +33,7 @@ class AddNewTaskFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        if (task != null) spinner.visibility = View.VISIBLE
-//        else spinner.visibility = View.INVISIBLE
+//        if (task != null) spinner.visibility = View.VISIBLE else spinner.visibility = View.INVISIBLE
 
         arguments?.let {
 
@@ -73,8 +72,8 @@ class AddNewTaskFragment : BaseFragment() {
         buttonSave.setOnClickListener { view ->
             val descriptionTask = editTextDescription.text.trim().toString()
             val titleTask = editTextTitle.text.trim().toString()
-            val state = "IN_PROGRESS"
-            //    .toString().setText() task?.state
+//            val state = "IN_PROGRESS"
+            val state = spinner.selectedItem.toString()
 
             if (descriptionTask.isEmpty()) {
                 editTextDescription.error = "description is missing"

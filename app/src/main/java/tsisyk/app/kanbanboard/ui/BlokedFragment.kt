@@ -25,7 +25,7 @@ class BlokedFragment : BaseFragment() {
 
         recycleView.setHasFixedSize(true)
         recycleView.layoutManager =
-            StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
 
         launch {
             context?.let {
