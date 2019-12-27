@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import tsisyk.app.kanbanboard.R
 import tsisyk.app.kanbanboard.data.TaskDatabase
 
-class HomeFragment : BaseFragment() {
+class TestFragment : BaseFragment() {
 
 
     override fun onCreateView(
@@ -20,7 +20,7 @@ class HomeFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_test, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -31,16 +31,9 @@ class HomeFragment : BaseFragment() {
 
         launch {
             context?.let{
-                val tasks = TaskDatabase(it).getTaskDao().getIN_PROGRESS()
+                val tasks = TaskDatabase(it).getTaskDao().getIN_TEST()
                 recycleView.adapter = TaskAdapter(tasks)
             }
-        }
-
-
-        addTask.setOnClickListener {
-            val action =
-                HomeFragmentDirections.actionHomeToNew()
-            Navigation.findNavController(it).navigate(action)
         }
 
     }

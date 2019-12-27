@@ -1,4 +1,4 @@
-package tsisyk.app.kanbanboard.ui
+package tsisyk.app.kanbanboard.utiliies
 
 import android.content.Context
 import android.widget.Toast

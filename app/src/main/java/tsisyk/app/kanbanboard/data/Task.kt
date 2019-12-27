@@ -8,7 +8,9 @@ import java.io.Serializable
 @Entity
 data class Task (
     val title: String,
-    val description: String
+    val description: String,
+    var state: String
+
 ):Serializable{
     @PrimaryKey(autoGenerate = true)
     var id : Int = 0

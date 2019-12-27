@@ -2,40 +2,55 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="400dp"
-    android:layout_height="400dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".ui.AddNewTaskFragment">
 
     <androidx.cardview.widget.CardView
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_gravity="center_horizontal"
+        android:layout_width="360dp"
+        android:layout_height="360dp">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="32dp"
+            android:background="@drawable/cardnull"
             android:layout_width="match_parent"
-
             android:layout_height="match_parent"
-            android:background="@drawable/noteback"
-            android:padding="64dp">
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <Button
+                android:id="@+id/button_delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Delete"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonSave"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buttonSave"
+                app:layout_constraintTop_toTopOf="@+id/buttonSave" />
 
             <Button
                 android:id="@+id/buttonSave"
-                android:layout_width="match_parent"
+                android:layout_marginRight ="16dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Save"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_delete"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/editTextTitle"
-                android:textAllCaps="true"
-                android:textStyle="bold"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Task  title"
                 android:inputType="textPersonName"
+                android:textAllCaps="true"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints"
@@ -54,16 +69,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextTitle" />
 
-            <!--        <com.google.android.material.chip.Chip-->
-            <!--            style="@style/Widget.MaterialComponents.Chip.Entry"-->
-            <!--            android:layout_width="97dp"-->
-            <!--            android:layout_height="22dp"-->
-            <!--            android:text="hello_world"-->
-            <!--            app:chipIcon="@mipmap/ic_launcher"-->
-            <!--            app:layout_constraintBottom_toTopOf="@+id/button"-->
-            <!--            app:layout_constraintEnd_toEndOf="parent"-->
-            <!--            app:layout_constraintStart_toStartOf="parent"-->
-            <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/common_google_signin_btn_text_light"
+                app:layout_constraintBottom_toTopOf="@+id/button_delete"
+                app:layout_constraintEnd_toEndOf="@+id/button_delete"
+                app:layout_constraintStart_toStartOf="@+id/buttonSave" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
