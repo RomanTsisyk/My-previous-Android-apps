@@ -73,7 +73,7 @@ public class PlaylistCardAdapter extends RecyclerView.Adapter<PlaylistCardAdapte
 
     // Create new views (invoked by the layout manager)
     @Override
-    public PlaylistCardAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // inflate a card layout
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.youtube_video_card, parent, false);
         // populate the viewholder
