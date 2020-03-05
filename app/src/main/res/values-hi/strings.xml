@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "title_home"> कोड </string>
+         <string name = "title_dashboard"> टेस्ट </string>
+         <string name = "title_notifications"> हो गया </string>
+         <string name = "hello_blank_fragment"> हैलो खाली टुकड़ा </string>
+         <string name = "title_is_missing"> शीर्षक गायब है </string>
+         <string name = "description_is_missing"> विवरण गायब है </string>
+         <string name = "yes"> Yes </string>
+         <string name = "no"> नहीं </string>
+         <string name = "undo"> आप इस ऑपरेशन को पूर्ववत् नहीं कर सकते </string>
+         <string name = "are_you_sure"> क्या आप सुनिश्चित हैं? </string>
+         <string name = "delete"> Delete </string>
+         <string name = "in_progress"> प्रगति में </string>
+         <string name = "review"> review </string>
+         <string name = "test"> test </string>
+         <string name = "done"> किया </string>
+         <string name = "blocked"> अवरुद्ध </string>
+</resources>

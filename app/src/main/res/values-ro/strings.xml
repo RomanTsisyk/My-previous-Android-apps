@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "title_home"> Cod </string>
+         <string name = "title_dashboard"> Test </string>
+         <string name = "title_notifications"> Done </string>
+         <string name = "hello_blank_fragment"> Hello fragment blank </string>
+         <string name = "title_is_missing"> titlul lipsește </string>
+         <string name = "description_is_missing"> descrierea lipsește </string>
+         <string name = "yes"> Da </string>
+         <string name = "no"> Nu </string>
+         <string name = "undo"> Nu puteți anula această operație </string>
+         <string name = "are_you_sure"> Sunteți sigur? </string>
+         <string name = "delete"> Ștergeți </string>
+         <string name = "in_progress"> în curs </string>
+         <string name = "review"> review </string>
+         <string name = "test"> test </string>
+         <string name = "done"> done </string>
+         <string name = "blocked"> blocat </string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "title_home">コード</string>
+         <string name = "title_dashboard">テスト</string>
+         <string name = "title_notifications">完了</string>
+         <string name = "hello_blank_fragment">こんにちは空白のフラグメント</string>
+         <string name = "title_is_missing">タイトルがありません</string>
+         <string name = "description_is_missing">説明がありません</string>
+         <string name = "yes">はい</string>
+         <string name = "no">いいえ</string>
+         <string name = "undo">この操作は元に戻せません</string>
+         <string name = "are_you_sure">よろしいですか</string>
+         <string name = "delete">削除</string>
+         <string name = "in_progress">進行中</string>
+         <string name = "review">レビュー</string>
+         <string name = "test">テスト</string>
+         <string name = "done">完了</string>
+         <string name = "blocked">ブロックされました</string>
+</resources>

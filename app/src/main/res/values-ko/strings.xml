@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "title_home"> 코드 </string>
+         <string name = "title_dashboard"> 테스트 </string>
+         <string name = "title_notifications"> 완료 </string>
+         <string name = "hello_blank_fragment"> 안녕하세요 빈 조각 </string>
+         <string name = "title_is_missing"> 제목이 없습니다 </string>
+         <string name = "description_is_missing"> 설명이 누락되었습니다 </string>
+         <string name = "yes"> 예 </string>
+         <string name = "no"> 아니요 </string>
+         <string name = "undo">이 작업을 취소 할 수 없습니다 </string>
+         <string name = "are_you_sure"> 정말입니까? </string>
+         <string name = "delete"> 삭제 </string>
+         <string name = "in_progress"> 진행 중 </string>
+         <string name = "review"> 검토 </string>
+         <string name = "test"> 테스트 </string>
+         <string name = "done"> 완료 </string>
+         <string name = "blocked"> 차단 </string>
+</resources>

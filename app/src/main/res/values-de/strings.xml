@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "title_home"> Code </string>
+         <string name = "title_dashboard"> Test </string>
+         <string name = "title_notifications"> Fertig </string>
+
+         <string name = "hello_blank_fragment"> Hallo leeres Fragment </string>
+         <string name = "title_is_missing"> Titel fehlt </string>
+         <string name = "description_is_missing"> Beschreibung fehlt </string>
+         <string name = "yes"> Ja </string>
+         <string name = "no"> Nein </string>
+         <string name = "undo"> Sie können diesen Vorgang nicht rückgängig machen </string>
+         <string name = "are_you_sure"> Sind Sie sicher? </string>
+         <string name = "delete"> Löschen </string>
+         <string name = "in_progress"> in Bearbeitung </string>
+         <string name = "review"> review </string>
+         <string name = "test"> test </string>
+         <string name = "done"> done </string>
+         <string name = "blocked"> blockiert </string>
+</resources>

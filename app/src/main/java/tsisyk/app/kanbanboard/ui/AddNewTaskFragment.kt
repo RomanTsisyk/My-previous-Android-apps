@@ -52,9 +52,9 @@ class AddNewTaskFragment : BaseFragment() {
 
         button_delete.setOnClickListener {
             AlertDialog.Builder(context).apply {
-                setTitle("Are you sure?")
-                setMessage("You cannot undo this operation")
-                setPositiveButton("Yes") { _, _ ->
+                val title = setTitle(getString(tsisyk.app.kanbanboard.R.string.are_you_sure))
+                setMessage(getString(tsisyk.app.kanbanboard.R.string.undo))
+                setPositiveButton(getString(tsisyk.app.kanbanboard.R.string.yes)) { _, _ ->
                     launch {
                         TaskDatabase(context).getTaskDao().deleteTask(task!!)
                         val action =
@@ -62,7 +62,7 @@ class AddNewTaskFragment : BaseFragment() {
                         Navigation.findNavController(view!!).navigate(action)
                     }
                 }
-                setNegativeButton("No") { _, _ ->
+                setNegativeButton(getString(tsisyk.app.kanbanboard.R.string.no)) { _, _ ->
 
                 }
             }.create().show()
@@ -76,13 +76,13 @@ class AddNewTaskFragment : BaseFragment() {
             val state = spinner.selectedItem.toString()
 
             if (descriptionTask.isEmpty()) {
-                editTextDescription.error = "description is missing"
+                editTextDescription.error = getString(tsisyk.app.kanbanboard.R.string.description_is_missing)
                 editTextDescription.requestFocus()
                 return@setOnClickListener
             }
 
             if (titleTask.isEmpty()) {
-                editTextTitle.error = "title is missing"
+                editTextTitle.error = getString(tsisyk.app.kanbanboard.R.string.title_is_missing)
                 editTextTitle.requestFocus()
                 return@setOnClickListener
             }

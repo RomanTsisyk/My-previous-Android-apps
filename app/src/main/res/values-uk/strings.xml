@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><![CDATA[
+         ]]>
+    <string name = "title_home"> Код </string>
+         <string name = "title_dashboard"> Тест </string>
+         <string name = "title_notifications"> Готово </string>
+         <string name = "hello_blank_fragment"> Привіт пустий фрагмент </string>
+         <string name = "title_is_missing"> відсутній заголовок </string>
+         <string name = "description_is_missing"> відсутній опис </string>
+         <string name = "yes"> Так </string>
+         <string name = "no"> Ні </string>
+         <string name = "undo"> Ви не можете скасувати цю операцію </string>
+         <string name = "are_you_sure"> Ви впевнені? </string>
+         <string name = "delete"> Видалити </string>
+         <string name = "in_progress"> виконується </string>
+         <string name = "review"> огляд </string>
+         <string name = "test"> тест </string>
+         <string name = "done"> зроблено </string>
+         <string name = "blocked"> заблоковано </string>
+</resources>
