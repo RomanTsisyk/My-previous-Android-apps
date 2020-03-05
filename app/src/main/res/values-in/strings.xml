@@ -16,4 +16,10 @@
          <string name = "test"> test </string>
          <string name = "done"> done </string>
          <string name = "blocked"> diblokir </string>
+    <string name = "title"> Judul </string>
+         <string name = "text"> Teks </string>
+         <string name = "save"> Simpan </string>
+         <string name = "task_title"> Judul tugas </string>
+         <string name = "task_description"> Deskripsi tugas </string>
+         <string name = "edit_task"> Edit tugas </string>
 </resources>

@@ -17,4 +17,10 @@
          <string name = "test"> тест </string>
          <string name = "done"> зроблено </string>
          <string name = "blocked"> заблоковано </string>
+    <string name = "title"> Назва </string>
+         <string name = "text"> Текст </string>
+         <string name = "save"> Зберегти </string>
+         <string name = "task_title"> Назва завдання </string>
+         <string name = "task_description"> Опис завдання </string>
+         <string name = "edit_task"> Редагувати завдання </string>
 </resources>

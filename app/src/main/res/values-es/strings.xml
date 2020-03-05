@@ -16,4 +16,10 @@
     <string name="test"> prueba </string>
     <string name="done"> hecho </string>
     <string name="blocked"> bloqueado </string>
+    <string name = "title"> Título </string>
+         <string name = "text"> Texto </string>
+         <string name = "save"> Guardar </string>
+         <string name = "task_title"> Título de la tarea </string>
+         <string name = "task_description"> Descripción de la tarea </string>
+         <string name = "edit_task"> Editar tarea </string>
 </resources>

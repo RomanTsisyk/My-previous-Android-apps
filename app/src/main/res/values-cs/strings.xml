@@ -15,4 +15,11 @@
          <string name = "review"> review </string>
          <string name = "test"> test </string>
          <string name = "done"> done </string>
-         <string name = "blocked"> blokovaný </string></resources>
+         <string name = "blocked"> blokovaný </string>
+    <string name = "title"> Title </string>
+         <string name = "text"> Text </string>
+         <string name = "save"> Save </string>
+         <string name = "task_title"> Název úlohy </string>
+         <string name = "task_description"> Popis úlohy </string>
+         <string name = "edit_task"> Upravit úlohu </string>
+</resources>

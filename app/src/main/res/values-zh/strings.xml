@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-     <string name="title_home">代码</string>
-          <string name="title_dashboard">测试</string>
-          <string name="title_notifications">完成</string>
-          <string name="hello_blank_fragment">你好空白片段</string>
-          <string name="title_is_missing">标题丢失</string>
-          <string name="description_is_missing">说明丢失</string>
-          <string name="yes">是</string>
-          <string name="no">否</string>
-          <string name="undo">您无法撤消此操作</string>
-          <string name="are_you_sure">确定吗？</string>
-          <string name="delete">删除</string>
-          <string name="in_progress">进行中</string>
-          <string name="review">评论</string>
-          <string name="test">测试</string>
-          <string name="done">完成</string>
-          <string name="blocked">已阻止</string>
-    </resources>
+    <string name="title_home">代码</string>
+    <string name="title_dashboard">测试</string>
+    <string name="title_notifications">完成</string>
+    <string name="hello_blank_fragment">你好空白片段</string>
+    <string name="title_is_missing">标题丢失</string>
+    <string name="description_is_missing">说明丢失</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="undo">您无法撤消此操作</string>
+    <string name="are_you_sure">确定吗？</string>
+    <string name="delete">删除</string>
+    <string name="in_progress">进行中</string>
+    <string name="review">评论</string>
+    <string name="test">测试</string>
+    <string name="done">完成</string>
+    <string name="blocked">已阻止</string>
+    <string name="title">标题</string>
+    <string name="text">文本</string>
+    <string name="save">保存</string>
+    <string name="task_title">任务标题</string>
+    <string name="task_description">任务说明</string>
+    <string name="edit_task">编辑任务</string>
+</resources>

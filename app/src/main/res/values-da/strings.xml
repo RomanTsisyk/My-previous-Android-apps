@@ -16,4 +16,10 @@
          <string name = "test"> test </string>
          <string name = "done"> færdig </string>
          <string name = "blocked"> blokeret </string>
+    <string name = "title"> Titel </string>
+         <string name = "text"> Tekst </string>
+         <string name = "save"> Gem </string>
+         <string name = "task_title"> Opgavens titel </string>
+         <string name = "task_description"> Opgavebeskrivelse </string>
+         <string name = "edit_task"> Rediger opgave </string>
 </resources>

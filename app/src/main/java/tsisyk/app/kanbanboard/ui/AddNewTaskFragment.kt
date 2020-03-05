@@ -7,11 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.view.get
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_add_new_task.*
 import kotlinx.coroutines.launch
 import tsisyk.app.kanbanboard.data.Task
 import tsisyk.app.kanbanboard.data.TaskDatabase
+import tsisyk.app.kanbanboard.utiliies.State
 import tsisyk.app.kanbanboard.utiliies.State.*
 
 
@@ -33,22 +35,15 @@ class AddNewTaskFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-//        if (task != null) spinner.visibility = View.VISIBLE else spinner.visibility = View.INVISIBLE
-
         arguments?.let {
-
             task = AddNewTaskFragmentArgs.fromBundle(it).tsakNote
             editTextTitle.setText(task?.title)
             editTextDescription.setText(task?.description)
-
-
             val values = arrayOf(IN_PROGRESS, PEER_REVIREW, IN_TEST, BLOKED, DONE)
             val adapter = ArrayAdapter(this.activity!!, R.layout.simple_spinner_item, values)
             adapter.setDropDownViewResource(R.layout.simple_dropdown_item_1line)
             spinner.adapter = adapter
-
         }
-
 
         button_delete.setOnClickListener {
             AlertDialog.Builder(context).apply {
@@ -72,7 +67,6 @@ class AddNewTaskFragment : BaseFragment() {
         buttonSave.setOnClickListener { view ->
             val descriptionTask = editTextDescription.text.trim().toString()
             val titleTask = editTextTitle.text.trim().toString()
-//            val state = "IN_PROGRESS"
             val state = spinner.selectedItem.toString()
 
             if (descriptionTask.isEmpty()) {

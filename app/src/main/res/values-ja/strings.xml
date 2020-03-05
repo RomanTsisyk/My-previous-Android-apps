@@ -16,4 +16,10 @@
          <string name = "test">テスト</string>
          <string name = "done">完了</string>
          <string name = "blocked">ブロックされました</string>
+    <string name = "title">タイトル</string>
+         <string name = "text">テキスト</string>
+         <string name = "save">保存</string>
+         <string name = "task_title">タスクのタイトル</string>
+         <string name = "task_description">タスクの説明</string>
+         <string name = "edit_task">タスクの編集</string>
 </resources>

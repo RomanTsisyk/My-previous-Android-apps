@@ -16,4 +16,11 @@
          <string name = "test"> test </string>
          <string name = "done"> done </string>
          <string name = "blocked"> blocat </string>
+    <string name = "title"> Titlu </string>
+         <string name = "text"> Text </string>
+         <string name = "save"> Save </string>
+         <string name = "task_title"> Titlul activității </string>
+         <string name = "task_description"> Descrierea activității </string>
+         <string name = "edit_task"> Editare sarcină </string>
+
 </resources>

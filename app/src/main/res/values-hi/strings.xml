@@ -16,4 +16,10 @@
          <string name = "test"> test </string>
          <string name = "done"> किया </string>
          <string name = "blocked"> अवरुद्ध </string>
+    <string name = "title"> Title </string>
+         <string name = "text"> पाठ </string>
+         <string name = "save"> Save </string>
+         <string name = "task_title"> कार्य शीर्षक </string>
+         <string name = "task_description"> कार्य विवरण </string>
+         <string name = "edit_task"> कार्य संपादित करें </string>
 </resources>

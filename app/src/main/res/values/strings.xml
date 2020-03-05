@@ -16,4 +16,10 @@
     <string name="test">test</string>
     <string name="done">done</string>
     <string name="blocked">blocked</string>
+    <string name="title">Title</string>
+    <string name="text">Text</string>
+    <string name="save">Save</string>
+    <string name="task_title">Task title</string>
+    <string name="task_description">Task description</string>
+    <string name="edit_task">Edit task</string>
 </resources>
