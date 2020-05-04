@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="ПІДТРИМАТИ">
+        <menu>
+            <item
+                android:id="@+id/privat_bank"
+                android:icon="@drawable/ic_account_balance_black_24dp"
+                android:title="Privat" />
+            <item
+                android:id="@+id/paypal"
+                android:icon="@drawable/paypall"
+                android:title="PayPal" />
+            <item
+                android:id="@+id/shop"
+                android:icon="@drawable/ic_shopping_cart_black_24dp"
+                android:title="Shop" />
+        </menu>
+    </item>
+
+
+    <item android:title="КОНТАКТИ">
+
+        <menu>
+            <item
+                android:id="@+id/email"
+                android:icon="@drawable/ic_email_black_24dp"
+                android:title="e-mail" />
+            <item
+                android:id="@+id/facebook"
+                android:icon="@drawable/ic_024_facebook"
+                android:title="Facebook" />
+            <item
+                android:id="@+id/instagram"
+                android:icon="@drawable/ic_044_instagram"
+                android:title="Instagram" />
+            <item
+                android:id="@+id/telegram"
+                android:icon="@drawable/ic_090_telegram"
+                android:title="Telegram" />
+            <item
+                android:id="@+id/twitter"
+                android:icon="@drawable/ic_096_twitter"
+                android:title="Twitter" />
+            <item
+                android:id="@+id/map"
+                android:icon="@drawable/maps"
+                android:title="Показати на карті"/>
+        </menu>
+    </item>
+</menu>
