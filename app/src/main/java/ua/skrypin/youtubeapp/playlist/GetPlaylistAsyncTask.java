@@ -1,21 +1,21 @@
-package com.akoscz.youtube;
+package ua.skrypin.youtubeapp.playlist;
 
 import android.os.AsyncTask;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
 
-import com.akoscz.youtube.ApiKey;
 import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.model.PlaylistItem;
 import com.google.api.services.youtube.model.PlaylistItemListResponse;
 import com.google.api.services.youtube.model.Video;
-import com.google.api.services.youtube.model.VideoContentDetails;
 import com.google.api.services.youtube.model.VideoListResponse;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import ua.skrypin.youtubeapp.ApiKey;
 
 /**
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,6 +30,7 @@ import java.util.List;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 public abstract class GetPlaylistAsyncTask extends AsyncTask<String, Void, Pair<String, List<Video>>> {
     private static final String TAG = "GetPlaylistAsyncTask";
     private static final Long YOUTUBE_PLAYLIST_MAX_RESULTS = 10L;

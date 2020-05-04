@@ -1,4 +1,4 @@
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
@@ -44,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/video_title"
             android:layout_marginLeft="12dp"
+            android:layout_marginTop="0dp"
             android:layout_marginRight="12dp">
 
             <TextView
@@ -51,6 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_marginRight="9dp"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@android:color/primary_text_light"
                 android:textSize="20sp"
@@ -60,7 +62,6 @@
                 android:id="@+id/video_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/video_view_count"
                 android:src="@drawable/ic_share" />
 
             <TextView
@@ -68,63 +69,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/video_share"
-                android:layout_below="@id/video_view_count"
+                android:layout_alignParentTop="true"
                 android:layout_marginLeft="8dp"
                 android:layout_toRightOf="@id/video_share"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center_vertical"
-                android:text="Share"
+                android:text="Поділитися"
                 android:textColor="@android:color/primary_text_light"
                 android:textSize="16sp" />
 
-            <ImageView
-                android:id="@+id/video_thumb_up"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/video_share"
-                android:layout_below="@id/video_view_count"
-                android:layout_toLeftOf="@+id/video_like_count"
-                android:gravity="center_vertical"
-                android:src="@drawable/ic_thumb_up" />
-
-            <TextView
-                android:id="@+id/video_like_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/video_share"
-                android:layout_below="@id/video_view_count"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="16dp"
-                android:layout_toLeftOf="@+id/video_thumb_down"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center_vertical"
-                android:textColor="@android:color/primary_text_light"
-                android:textSize="14sp"
-                tools:text="99" />
-
-            <ImageView
-                android:id="@+id/video_thumb_down"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/video_share"
-                android:layout_below="@id/video_view_count"
-                android:layout_toLeftOf="@+id/video_dislike_count"
-                android:gravity="center_vertical"
-                android:src="@drawable/ic_thumb_down" />
-
-            <TextView
-                android:id="@+id/video_dislike_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/video_share"
-                android:layout_alignParentRight="true"
-                android:layout_below="@id/video_view_count"
-                android:layout_marginLeft="12dp"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center_vertical"
-                android:textColor="@android:color/primary_text_light"
-                android:textSize="14sp"
-                tools:text="99" />
 
         </RelativeLayout>
 
@@ -155,18 +108,5 @@
                 android:textColor="@android:color/primary_text_dark" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/video_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/video_stats_line"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginTop="2dp"
-            android:fontFamily="sans-serif-light"
-            android:textColor="@android:color/secondary_text_light"
-            tools:text="This is a sample description of the video item that is long enough to wrap around to the next line." />
-
     </RelativeLayout>
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

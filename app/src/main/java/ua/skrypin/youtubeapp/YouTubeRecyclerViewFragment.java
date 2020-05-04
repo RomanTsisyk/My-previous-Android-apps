@@ -1,12 +1,8 @@
-package com.akoscz.youtube;
+package ua.skrypin.youtubeapp;
 
 import android.content.res.Resources;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +11,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.akoscz.youtube.model.PlaylistVideos;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.model.PlaylistListResponse;
 import com.google.api.services.youtube.model.Video;
@@ -24,6 +24,12 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import kr.co.prnd.youtubeplayerandroidxfragment.BuildConfig;
+import ua.skrypin.youtubeapp.playlist.GetPlaylistAsyncTask;
+import ua.skrypin.youtubeapp.playlist.GetPlaylistTitlesAsyncTask;
+import ua.skrypin.youtubeapp.playlist.PlaylistCardAdapter;
+import ua.skrypin.youtubeapp.playlist.PlaylistVideos;
 
 /**
  * Licensed under the Apache License, Version 2.0 (the "License");

@@ -1,13 +1,14 @@
-package com.akoscz.youtube;
+package ua.skrypin.youtubeapp.playlist;
 
 import android.os.AsyncTask;
 import android.text.TextUtils;
 
-import com.akoscz.youtube.ApiKey;
 import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.model.PlaylistListResponse;
 
 import java.io.IOException;
+
+import ua.skrypin.youtubeapp.ApiKey;
 
 /**
  * This AsyncTask will get the titles of all the playlists that are passed in as a parameter.

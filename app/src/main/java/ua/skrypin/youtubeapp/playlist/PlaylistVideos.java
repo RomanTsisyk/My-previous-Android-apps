@@ -1,4 +1,4 @@
-package com.akoscz.youtube.model;
+package ua.skrypin.youtubeapp.playlist;
 
 import com.google.api.services.youtube.model.Video;
 
@@ -18,6 +18,7 @@ import java.util.List;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 public class PlaylistVideos extends ArrayList<Video>{
     public final String playlistId;
     private String mNextPageToken;
