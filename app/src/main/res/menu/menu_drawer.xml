@@ -3,24 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="ПІДТРИМАТИ">
-        <menu>
-            <item
-                android:id="@+id/privat_bank"
-                android:icon="@drawable/ic_account_balance_black_24dp"
-                android:title="Privat" />
-            <item
-                android:id="@+id/paypal"
-                android:icon="@drawable/paypall"
-                android:title="PayPal" />
-            <item
-                android:id="@+id/shop"
-                android:icon="@drawable/ic_shopping_cart_black_24dp"
-                android:title="Shop" />
-        </menu>
-    </item>
-
-
     <item android:title="КОНТАКТИ">
 
         <menu>

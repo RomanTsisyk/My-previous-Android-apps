@@ -127,68 +127,46 @@ public class YouTubeRecyclerViewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // set the Picasso debug indicator only for debug builds
         Picasso.with(getActivity()).setIndicatorsEnabled(BuildConfig.DEBUG);
-
-        // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.youtube_recycler_view_fragment, container, false);
-
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.youtube_recycler_view);
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
-
         Resources resources = getResources();
         if (resources.getBoolean(R.bool.isTablet)) {
-            // use a staggered grid layout if we're on a large screen device
             mLayoutManager = new StaggeredGridLayoutManager(resources.getInteger(R.integer.columns), StaggeredGridLayoutManager.VERTICAL);
         } else {
-            // use a linear layout on phone devices
             mLayoutManager = new LinearLayoutManager(getActivity());
         }
-        
         mProgressDialog = new ProgressDialog(getContext());
-
         mRecyclerView.setLayoutManager(mLayoutManager);
-
         mPlaylistSpinner = (Spinner)rootView.findViewById(R.id.youtube_playlist_spinner);
-
         return rootView;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        // if we have a playlist in our retained fragment, use it to populate the UI
         if (mPlaylistVideos != null) {
-            // reload the UI with the existing playlist.  No need to fetch it again
             reloadUi(mPlaylistVideos, false);
         } else {
-            // otherwise create an empty playlist using the first item in the playlist id's array
             mPlaylistVideos = new PlaylistVideos(mPlaylistIds[0]);
-            // and reload the UI with the selected playlist and kick off fetching the playlist content
             reloadUi(mPlaylistVideos, true);
         }
 
         ArrayAdapter<List<String>> spinnerAdapter;
-        // if we don't have the playlist titles yet
         if (mPlaylistTitles == null || mPlaylistTitles.isEmpty()) {
-            // initialize the spinner with the playlist ID's so that there's something in the UI until the GetPlaylistTitlesAsyncTask finishes
             spinnerAdapter = new ArrayAdapter(getContext(), SPINNER_ITEM_LAYOUT_ID, Arrays.asList(mPlaylistIds));
         } else {
-            // otherwise use the playlist titles for the spinner
-            spinnerAdapter = new ArrayAdapter(getContext(), SPINNER_ITEM_LAYOUT_ID, mPlaylistTitles);
+            spinnerAdapter = new ArrayAdapter(getContext(),
+                    SPINNER_ITEM_LAYOUT_ID,
+                    mPlaylistTitles);
         }
 
         spinnerAdapter.setDropDownViewResource(SPINNER_ITEM_DROPDOWN_LAYOUT_ID);
         mPlaylistSpinner.setAdapter(spinnerAdapter);
-
-        // set up the onItemSelectedListener for the spinner
         mPlaylistSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // reload the UI with the playlist video list of the selected playlist
                 mPlaylistVideos = new PlaylistVideos(mPlaylistIds[position]);
                 reloadUi(mPlaylistVideos, true);
             }
@@ -199,11 +177,9 @@ public class YouTubeRecyclerViewFragment extends Fragment {
     }
 
     private void reloadUi(final PlaylistVideos playlistVideos, boolean fetchPlaylist) {
-        // initialize the cards adapter
         initCardAdapter(playlistVideos);
 
         if (fetchPlaylist) {
-            // start fetching the selected playlistVideos contents
             new GetPlaylistAsyncTask(mYouTubeDataApi) {
                 @Override
                 public void onPostExecute(Pair<String, List<Video>> result) {
@@ -214,7 +190,6 @@ public class YouTubeRecyclerViewFragment extends Fragment {
     }
 
     private void initCardAdapter(final PlaylistVideos playlistVideos) {
-        // create the adapter with our playlistVideos and a callback to handle when we reached the last item
         mPlaylistCardAdapter = new PlaylistCardAdapter(playlistVideos, new LastItemReachedListener() {
             @Override
             public void onLastItem(int position, String nextPageToken) {
@@ -236,11 +211,7 @@ public class YouTubeRecyclerViewFragment extends Fragment {
         playlistVideos.addAll(result.second);
         mPlaylistCardAdapter.notifyItemRangeInserted(positionStart, result.second.size());
     }
-    
 
-    /**
-     * Interface used by the {@link PlaylistCardAdapter} to inform us that we reached the last item in the list.
-     */
     public interface LastItemReachedListener {
         void onLastItem(int position, String nextPageToken);
     }
