@@ -5,6 +5,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\App\\App 2020\\_Start Apps\\skrypin.ua\\skrypin_ua.jks')
+            storePassword 'KeyPass'
+            keyAlias 'SKRYPIN'
+            keyPassword 'KeyPass'
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion '29.0.3'
 
@@ -12,9 +20,10 @@ android {
         applicationId "ua.skrypin.youtubeapp"
         minSdkVersion 15
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
         multiDexEnabled true
+        signingConfig signingConfigs.debug
 
     }
 
