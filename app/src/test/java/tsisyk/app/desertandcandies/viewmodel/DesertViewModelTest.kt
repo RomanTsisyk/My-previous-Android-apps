@@ -12,6 +12,7 @@ import org.mockito.MockitoAnnotations
 import tsisyk.app.desertandcandies.model.Desert
 import tsisyk.app.desertandcandies.model.DesertAttributes
 import tsisyk.app.desertandcandies.model.DesertGereratior
+import tsisyk.app.desertandcandies.model.DesertRepository
 
 class DesertViewModelTest {
 
@@ -22,11 +23,13 @@ class DesertViewModelTest {
 
     @Mock
     lateinit var mockGenerator: DesertGereratior
+    @Mock
+    lateinit var mockRepository: DesertRepository
 
     @Before
     fun setup(){
         MockitoAnnotations.initMocks(this)
-        desertViewModel = DesertViewModel(mockGenerator)
+        desertViewModel = DesertViewModel(mockGenerator, mockRepository )
     }
 
     @Test
@@ -38,11 +41,80 @@ class DesertViewModelTest {
         desertViewModel.taste = 3
         desertViewModel.price = 3
         desertViewModel.calories = 3
-
         desertViewModel.updateDesert()
 
-
         assertEquals(stubDesert, desertViewModel.desert)
+    }
+
+    @Test
+    fun testCansaveDesertWithoutBlankName(){
+        desertViewModel.taste = 3
+        desertViewModel.price = 3
+        desertViewModel.calories = 3
+        desertViewModel.drawable = 1
+        desertViewModel.name = ""
+
+        val canSaveDesert = desertViewModel.canSaveDesert()
+        assertEquals(false, canSaveDesert)
+    }
+
+    @Test
+    fun testCansaveDesertWithoutAvatar(){
+        desertViewModel.taste = 3
+        desertViewModel.price = 3
+        desertViewModel.calories = 3
+        desertViewModel.drawable = 0
+        desertViewModel.name = "test"
+
+        val canSaveDesert = desertViewModel.canSaveDesert()
+        assertEquals(false, canSaveDesert)
+    }
+
+    @Test
+    fun testCansaveDesertWithoutPrice(){
+        desertViewModel.taste = 3
+        desertViewModel.price = 0
+        desertViewModel.calories = 3
+        desertViewModel.drawable = 1
+        desertViewModel.name = "test"
+
+        val canSaveDesert = desertViewModel.canSaveDesert()
+        assertEquals(false, canSaveDesert)
+    }
+
+    @Test
+    fun testCansaveDesertWithoutTaste(){
+        desertViewModel.taste = 0
+        desertViewModel.price = 30
+        desertViewModel.calories = 3
+        desertViewModel.drawable = 1
+        desertViewModel.name = "test"
+
+        val canSaveDesert = desertViewModel.canSaveDesert()
+        assertEquals(false, canSaveDesert)
+    }
+
+    @Test
+    fun testCansaveDesertWithoutCalories(){
+        desertViewModel.taste = 20
+        desertViewModel.price = 30
+        desertViewModel.calories = 0
+        desertViewModel.drawable = 1
+        desertViewModel.name = "test"
+
+        val canSaveDesert = desertViewModel.canSaveDesert()
+        assertEquals(false, canSaveDesert)
+    }
+
+    @Test
+    fun testCansaveDesertWithoutAvatarAndBlankName(){
+        desertViewModel.taste = 3
+        desertViewModel.price = 3
+        desertViewModel.calories = 3
+        desertViewModel.drawable = 0
+        desertViewModel.name = ""
+        val canSaveDesert = desertViewModel.canSaveDesert()
+        assertEquals(false, canSaveDesert)
     }
 
 }

@@ -5,8 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import tsisyk.app.desertandcandies.model.*
 import tsisyk.app.desertandcandies.model.AttributeType.*
+import tsisyk.app.desertandcandies.model.room.RoomRepository
 
-class DesertViewModel(private val generator: DesertGereratior = DesertGereratior()) : ViewModel() {
+class DesertViewModel(private val generator: DesertGereratior = DesertGereratior(),
+                      private val repository: DesertRepository = RoomRepository()) : ViewModel() {
     private val desertLiveData = MutableLiveData<Desert>()
     fun getDesertLiveData(): LiveData<Desert> = desertLiveData
 
@@ -33,9 +35,21 @@ class DesertViewModel(private val generator: DesertGereratior = DesertGereratior
         updateDesert()
     }
 
-    fun drawableSelected(drawable: Int){
+    fun drawableSelected(drawable: Int) {
         this.drawable = drawable
         updateDesert()
+
+    }
+
+    fun canSaveDesert(): Boolean {
+        return price != 0 && taste != 0 && calories != 0 && drawable != 0 && name.isNotEmpty()
+    }
+
+    fun saveDesert(): Boolean {
+        return if (canSaveDesert()) {
+            repository.saveDesert(desert)
+            true
+        } else false
 
     }
 }

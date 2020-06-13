@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
@@ -94,7 +95,12 @@ class DesertActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
         }
 
         saveButton.setOnClickListener {
-            // TODO: handle save button clicked
+            if (viewModel.saveDesert()){
+                Toast.makeText(this, getString(R.string.desert_saved), Toast.LENGTH_SHORT).show()
+                finish()
+            } else
+                Toast.makeText(this, getString(R.string.error_saving_desert), Toast.LENGTH_SHORT).show()
+
         }
     }
 
