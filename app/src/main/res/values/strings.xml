@@ -1,0 +1,16 @@
+<resources>
+  <string name="app_name">Desert ranking</string>
+  <string name="avatar">Avatar</string>
+  <string name="tap_to_set_avatar">Tap to set avatar</string>
+  <string name="price">Price</string>
+  <string name="calories">Calories</string>
+  <string name="taste">Taste</string>
+  <string name="name">Name</string>
+  <string name="desert_name">Desert name</string>
+  <string name="hit_points">HIT POINTS</string>
+  <string name="save">SAVE</string>
+  <string name="error_saving_desert">Please complete all fields.</string>
+  <string name="desert_saved">Desert saved!</string>
+  <string name="clear_all_deserts">Clear All Deserts</string>
+  <string name="add_desert">Add Desert</string>
+</resources>

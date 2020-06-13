@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    tools:context="tsisyk.app.desertandcandies.view.desert.DesertActivity">
+
+    <TextView
+        android:id="@+id/tapLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tap_to_set_avatar"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarImageView"
+        app:layout_constraintEnd_toEndOf="@+id/avatarImageView"
+        app:layout_constraintStart_toStartOf="@+id/avatarImageView"
+        app:layout_constraintTop_toTopOf="@+id/avatarImageView"
+        tools:text="@string/tap_to_set_avatar" />
+
+    <ImageView
+        android:id="@+id/avatarImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dp_16"
+        android:contentDescription="@string/avatar"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:layout_marginTop="16dp"
+        android:hint="@string/desert_name"
+
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatarImageView" />
+
+    <TextView
+        android:id="@+id/priceLabel"
+        style="@style/AppTheme.TextView"
+        android:layout_marginTop="16dp"
+        android:text="@string/price"
+        app:layout_constraintEnd_toStartOf="@+id/caloriesLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
+
+    <TextView
+        android:id="@+id/caloriesLabel"
+        style="@style/AppTheme.TextView"
+        android:text="@string/calories"
+        app:layout_constraintBottom_toBottomOf="@+id/priceLabel"
+        app:layout_constraintEnd_toStartOf="@+id/tasteLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/priceLabel"
+        app:layout_constraintTop_toTopOf="@+id/priceLabel" />
+
+
+    <TextView
+        android:id="@+id/tasteLabel"
+        style="@style/AppTheme.TextView"
+
+        android:text="@string/taste"
+
+        app:layout_constraintBottom_toBottomOf="@+id/caloriesLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/caloriesLabel"
+        app:layout_constraintTop_toTopOf="@+id/caloriesLabel" />
+
+
+    <Spinner
+        android:id="@+id/calories"
+        style="@style/AppTheme.SpinnerStyle"
+        app:layout_constraintEnd_toStartOf="@+id/taste"
+
+        app:layout_constraintStart_toEndOf="@+id/price"
+        app:layout_constraintTop_toBottomOf="@+id/caloriesLabel" />
+
+    <Spinner
+        android:id="@+id/price"
+        style="@style/AppTheme.SpinnerStyle"
+        android:tooltipText="@string/price"
+        app:layout_constraintBottom_toBottomOf="@+id/calories"
+
+        app:layout_constraintEnd_toStartOf="@+id/calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/calories" />
+
+    <Spinner
+        android:id="@+id/taste"
+        style="@style/AppTheme.SpinnerStyle"
+        app:layout_constraintBottom_toBottomOf="@+id/calories"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/calories"
+        app:layout_constraintTop_toTopOf="@+id/calories"
+        app:layout_constraintVertical_bias="0.529" />
+
+    <TextView
+        android:id="@+id/hitPoints"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calories"
+        tools:text="100" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:layout_marginBottom="8dp"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,3 @@
+package tsisyk.app.desertandcandies.model
+
+interface DesertRepository
