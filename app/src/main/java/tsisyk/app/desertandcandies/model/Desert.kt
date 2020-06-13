@@ -1,3 +1,9 @@
 package tsisyk.app.desertandcandies.model
 
-class Desert
+
+data class Desert(
+        val attributes: DesertAttributes = DesertAttributes(),
+        val pointsRanking: Int = 0,
+        val name: String,
+        val drawable: Int = 0
+)

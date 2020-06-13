@@ -11,7 +11,7 @@ object AttributeStore {
     }
     val CALORIES: List<AttributeValue> by lazy {
         val avatars = mutableListOf<AttributeValue>()
-        avatars.add(AttributeValue("> 400"))
+        avatars.add(AttributeValue("> 400" , 1))
         avatars.add(AttributeValue("200 ..400", 1))
         avatars.add(AttributeValue("100 ..199", 2))
         avatars.add(AttributeValue(" < 99", 3))
@@ -19,7 +19,7 @@ object AttributeStore {
     }
     val PLEASURE: List<AttributeValue> by lazy {
         val avatars = mutableListOf<AttributeValue>()
-        avatars.add(AttributeValue("Fine"))
+        avatars.add(AttributeValue("Fine",1))
         avatars.add(AttributeValue("Tasty", 1))
         avatars.add(AttributeValue("Delishes", 2))
         avatars.add(AttributeValue("Awesome", 3))
