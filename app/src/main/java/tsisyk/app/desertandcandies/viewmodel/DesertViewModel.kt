@@ -1,7 +1,9 @@
 package tsisyk.app.desertandcandies.viewmodel
 
+import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import tsisyk.app.desertandcandies.model.*
 import tsisyk.app.desertandcandies.model.AttributeType.*
@@ -9,10 +11,15 @@ import tsisyk.app.desertandcandies.model.room.RoomRepository
 
 class DesertViewModel(private val generator: DesertGereratior = DesertGereratior(),
                       private val repository: DesertRepository = RoomRepository()) : ViewModel() {
+
     private val desertLiveData = MutableLiveData<Desert>()
     fun getDesertLiveData(): LiveData<Desert> = desertLiveData
 
-    var name = ""
+    private val saveLiveData = MutableLiveData<Boolean>()
+    fun getSaveLiveData(): LiveData<Boolean> = saveLiveData
+
+
+    var name = ObservableField<String>("")
     var price = 0
     var taste = 0
     var calories = 0
@@ -22,7 +29,7 @@ class DesertViewModel(private val generator: DesertGereratior = DesertGereratior
 
     fun updateDesert() {
         val attributes = DesertAttributes(price, calories, taste)
-        desert = generator.generateDesert(attributes, name, drawable)
+        desert = generator.generateDesert(attributes, name.get() ?: "", drawable)
         desertLiveData.postValue(desert)
     }
 
@@ -42,15 +49,18 @@ class DesertViewModel(private val generator: DesertGereratior = DesertGereratior
     }
 
     fun canSaveDesert(): Boolean {
-        return price != 0 && taste != 0 && calories != 0 && drawable != 0 && name.isNotEmpty()
+        val name = this.name.get()
+        name?.let {
+            return price != 0 && taste != 0 && calories != 0 && drawable != 0 && name.isNotEmpty()
+        }
+        return false
     }
 
-    fun saveDesert(): Boolean {
+    fun saveDesert() {
         return if (canSaveDesert()) {
             repository.saveDesert(desert)
-            true
-        } else false
-
+            saveLiveData.postValue(true)
+        } else saveLiveData.postValue(false)
     }
 }
 

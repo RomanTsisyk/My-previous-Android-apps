@@ -52,7 +52,7 @@ class DesertViewModelTest {
         desertViewModel.price = 3
         desertViewModel.calories = 3
         desertViewModel.drawable = 1
-        desertViewModel.name = ""
+        desertViewModel.name.set("")
 
         val canSaveDesert = desertViewModel.canSaveDesert()
         assertEquals(false, canSaveDesert)
@@ -64,7 +64,7 @@ class DesertViewModelTest {
         desertViewModel.price = 3
         desertViewModel.calories = 3
         desertViewModel.drawable = 0
-        desertViewModel.name = "test"
+        desertViewModel.name.set("test")
 
         val canSaveDesert = desertViewModel.canSaveDesert()
         assertEquals(false, canSaveDesert)
@@ -76,7 +76,7 @@ class DesertViewModelTest {
         desertViewModel.price = 0
         desertViewModel.calories = 3
         desertViewModel.drawable = 1
-        desertViewModel.name = "test"
+        desertViewModel.name.set("test")
 
         val canSaveDesert = desertViewModel.canSaveDesert()
         assertEquals(false, canSaveDesert)
@@ -88,7 +88,7 @@ class DesertViewModelTest {
         desertViewModel.price = 30
         desertViewModel.calories = 3
         desertViewModel.drawable = 1
-        desertViewModel.name = "test"
+        desertViewModel.name.set("test")
 
         val canSaveDesert = desertViewModel.canSaveDesert()
         assertEquals(false, canSaveDesert)
@@ -100,7 +100,7 @@ class DesertViewModelTest {
         desertViewModel.price = 30
         desertViewModel.calories = 0
         desertViewModel.drawable = 1
-        desertViewModel.name = "test"
+        desertViewModel.name.set("test")
 
         val canSaveDesert = desertViewModel.canSaveDesert()
         assertEquals(false, canSaveDesert)
@@ -112,7 +112,7 @@ class DesertViewModelTest {
         desertViewModel.price = 3
         desertViewModel.calories = 3
         desertViewModel.drawable = 0
-        desertViewModel.name = ""
+        desertViewModel.name.set("")
         val canSaveDesert = desertViewModel.canSaveDesert()
         assertEquals(false, canSaveDesert)
     }

@@ -8,8 +8,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import tsisyk.app.desertandcandies.R
 import tsisyk.app.desertandcandies.model.AttributeStore
@@ -17,6 +17,7 @@ import tsisyk.app.desertandcandies.model.Avatar
 import tsisyk.app.desertandcandies.view.avatars.AvatarAdapter
 import tsisyk.app.desertandcandies.view.avatars.AvatarBottomDialogFragment
 import kotlinx.android.synthetic.main.activity_desert.*
+import tsisyk.app.desertandcandies.databinding.ActivityDesertBinding
 import tsisyk.app.desertandcandies.model.AttributeType
 import tsisyk.app.desertandcandies.viewmodel.DesertViewModel
 
@@ -25,16 +26,16 @@ class DesertActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
 
     private lateinit var viewModel: DesertViewModel
 
+    lateinit var binding: ActivityDesertBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_desert)
-
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_desert)
         viewModel = ViewModelProviders.of(this).get(DesertViewModel::class.java)
-
+        binding.viewmodel = viewModel
         configureUI()
         configureSpinnerAdapters()
         configureSpinnerListeners()
-        configureEditText()
         configureClickListeners()
         configureLiveDataObservers()
     }
@@ -78,30 +79,12 @@ class DesertActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
         }
     }
 
-    private fun configureEditText() {
-        nameEditText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {}
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                viewModel.name = s.toString()
-            }
-        })
-    }
-
     private fun configureClickListeners() {
         avatarImageView.setOnClickListener {
             val bottomDialogFragment = AvatarBottomDialogFragment.newInstance()
             bottomDialogFragment.show(supportFragmentManager, "AvatarBottomDialogFragment")
         }
 
-        saveButton.setOnClickListener {
-            if (viewModel.saveDesert()){
-                Toast.makeText(this, getString(R.string.desert_saved), Toast.LENGTH_SHORT).show()
-                finish()
-            } else
-                Toast.makeText(this, getString(R.string.error_saving_desert), Toast.LENGTH_SHORT).show()
-
-        }
     }
 
     override fun avatarClicked(avatar: Avatar) {
@@ -113,12 +96,23 @@ class DesertActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
         tapLabel.visibility = View.INVISIBLE
     }
 
-    fun configureLiveDataObservers() {
+    private fun configureLiveDataObservers() {
         viewModel.getDesertLiveData().observe(this, Observer { desert ->
             desert.let {
                 hitPoints.text = desert.pointsRanking.toString()
                 avatarImageView.setImageResource(desert.drawable)
                 nameEditText.setText(desert.name)
+            }
+        })
+
+        viewModel.getSaveLiveData().observe(this, Observer { saved ->
+            saved?.let {
+                if (saved) {
+                    Toast.makeText(this, getString(R.string.desert_saved), Toast.LENGTH_SHORT).show()
+                    finish()
+                } else {
+                    Toast.makeText(this, getString(R.string.error_saving_desert), Toast.LENGTH_SHORT).show()
+                }
             }
         })
     }
