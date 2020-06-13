@@ -1,33 +1,3 @@
-/*
- * Copyright (c) 2018 Razeware LLC
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
- * distribute, sublicense, create a derivative work, and/or sell copies of the
- * Software in any work that is designed, intended, or marketed for pedagogical or
- * instructional purposes related to programming, coding, application development,
- * or information technology.  Permission for such use, copying, modification,
- * merger, publication, distribution, sublicensing, creation of derivative works,
- * or sale is expressly withheld.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
 package tsisyk.app.desertandcandies.view.desert
 
 import android.os.Bundle
@@ -37,32 +7,41 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProviders
 import tsisyk.app.desertandcandies.R
 import tsisyk.app.desertandcandies.model.AttributeStore
-import tsisyk.app.desertandcandies.model.AttributeValue
 import tsisyk.app.desertandcandies.model.Avatar
 import tsisyk.app.desertandcandies.view.avatars.AvatarAdapter
 import tsisyk.app.desertandcandies.view.avatars.AvatarBottomDialogFragment
 import kotlinx.android.synthetic.main.activity_desert.*
+import tsisyk.app.desertandcandies.model.AttributeType
+import tsisyk.app.desertandcandies.viewmodel.DesertViewModel
 
 
 class DesertActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
 
+    private lateinit var viewModel: DesertViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_desert)
+
+        viewModel = ViewModelProviders.of(this).get(DesertViewModel::class.java)
 
         configureUI()
         configureSpinnerAdapters()
         configureSpinnerListeners()
         configureEditText()
         configureClickListeners()
+        configureLiveDataObservers()
     }
 
     private fun configureUI() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         title = getString(R.string.add_desert)
-        // TODO: hide label
+        if (viewModel.drawable != 0) hideTapLabel()
     }
 
     private fun configureSpinnerAdapters() {
@@ -71,27 +50,27 @@ class DesertActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
         calories.adapter = ArrayAdapter(this,
                 android.R.layout.simple_spinner_dropdown_item, AttributeStore.CALORIES)
         taste.adapter = ArrayAdapter(this,
-                android.R.layout.simple_spinner_dropdown_item, AttributeStore.PLEASURE)
+                android.R.layout.simple_spinner_dropdown_item, AttributeStore.TASTE)
     }
 
     private fun configureSpinnerListeners() {
         price.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                // TODO: handle selection
+                viewModel.attributeSelected(AttributeType.PRICE, position)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
         calories.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                // TODO: handle selection
+                viewModel.attributeSelected(AttributeType.CALORIES, position)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
         taste.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                // TODO: handle selection
+                viewModel.attributeSelected(AttributeType.TASTE, position)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
@@ -103,7 +82,7 @@ class DesertActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // TODO: handle text changed
+                viewModel.name = s.toString()
             }
         })
     }
@@ -120,11 +99,21 @@ class DesertActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
     }
 
     override fun avatarClicked(avatar: Avatar) {
-        // TODO: handle avatar clicked
+        viewModel.drawableSelected(avatar.drawable)
         hideTapLabel()
     }
 
     private fun hideTapLabel() {
         tapLabel.visibility = View.INVISIBLE
+    }
+
+    fun configureLiveDataObservers() {
+        viewModel.getDesertLiveData().observe(this, Observer { desert ->
+            desert.let {
+                hitPoints.text = desert.pointsRanking.toString()
+                avatarImageView.setImageResource(desert.drawable)
+                nameEditText.setText(desert.name)
+            }
+        })
     }
 }

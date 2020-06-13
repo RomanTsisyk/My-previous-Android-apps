@@ -22,7 +22,7 @@ class AvatarBottomDialogFragment : BottomSheetDialogFragment(), AvatarAdapter.Av
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        avatarRecyclerView.layoutManager = androidx.recyclerview.widget.GridLayoutManager(context, 5)
+        avatarRecyclerView.layoutManager = GridLayoutManager(context, 4)
         avatarRecyclerView.adapter = AvatarAdapter(AvatarStore.AVATARS, this)
     }
 

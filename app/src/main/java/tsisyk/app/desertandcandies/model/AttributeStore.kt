@@ -17,7 +17,7 @@ object AttributeStore {
         avatars.add(AttributeValue(" < 99", 3))
         avatars
     }
-    val PLEASURE: List<AttributeValue> by lazy {
+    val TASTE: List<AttributeValue> by lazy {
         val avatars = mutableListOf<AttributeValue>()
         avatars.add(AttributeValue("Fine",1))
         avatars.add(AttributeValue("Tasty", 1))
