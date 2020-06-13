@@ -1,3 +1,9 @@
 package tsisyk.app.desertandcandies.model
 
-interface DesertRepository
+import androidx.lifecycle.LiveData
+
+interface DesertRepository {
+    fun saveDesert( desert: Desert)
+    fun getAllDeserts (): LiveData<List<Desert>>
+    fun clearAllDeserts()
+}

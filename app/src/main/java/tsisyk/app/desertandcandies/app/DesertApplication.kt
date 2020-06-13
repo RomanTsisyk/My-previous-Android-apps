@@ -1,6 +1,7 @@
 package tsisyk.app.desertandcandies.app
 
 import android.app.Application
+import androidx.room.Room
 import tsisyk.app.desertandcandies.model.room.DesertDatabase
 
 class DesertApplication : Application() {
@@ -11,6 +12,8 @@ class DesertApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        // TODO: init database
-    }
+
+        database = Room.databaseBuilder(this, DesertDatabase::class.java, "desert_database")
+                .build()
+   }
 }
