@@ -18,8 +18,7 @@ class DesertViewModel(private val generator: DesertGereratior = DesertGereratior
     private val saveLiveData = MutableLiveData<Boolean>()
     fun getSaveLiveData(): LiveData<Boolean> = saveLiveData
 
-
-    var name = ObservableField<String>("")
+    var name = ObservableField("")
     var price = 0
     var taste = 0
     var calories = 0
@@ -45,22 +44,24 @@ class DesertViewModel(private val generator: DesertGereratior = DesertGereratior
     fun drawableSelected(drawable: Int) {
         this.drawable = drawable
         updateDesert()
-
     }
 
     fun canSaveDesert(): Boolean {
         val name = this.name.get()
         name?.let {
-            return price != 0 && taste != 0 && calories != 0 && drawable != 0 && name.isNotEmpty()
+            return price != 0 && taste != 0 && calories != 0 && name.isNotEmpty() && drawable != 0
         }
         return false
+
     }
 
     fun saveDesert() {
         return if (canSaveDesert()) {
             repository.saveDesert(desert)
             saveLiveData.postValue(true)
-        } else saveLiveData.postValue(false)
+        } else {
+            saveLiveData.postValue(false)
+        }
     }
 }
 

@@ -29,8 +29,8 @@
 
         <ImageView
             android:id="@+id/avatarImageView"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_margin="@dimen/dp_16"
             android:contentDescription="@string/avatar"
             app:layout_constraintDimensionRatio="H,1:1"
@@ -46,7 +46,7 @@
             android:layout_margin="@dimen/dp_16"
             android:layout_marginTop="16dp"
             android:hint="@string/desert_name"
-
+            android:text="@={viewmodel.name}"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -109,10 +109,8 @@
             style="@style/AppTheme.SpinnerStyle"
             app:layout_constraintBottom_toBottomOf="@+id/calories"
             app:layout_constraintEnd_toEndOf="parent"
-
             app:layout_constraintStart_toEndOf="@+id/calories"
-            app:layout_constraintTop_toTopOf="@+id/calories"
-            app:layout_constraintVertical_bias="0.529" />
+            app:layout_constraintTop_toTopOf="@+id/calories"/>
 
         <TextView
             android:id="@+id/hitPoints"
