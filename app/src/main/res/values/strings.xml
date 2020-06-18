@@ -13,4 +13,6 @@
   <string name="desert_saved">Desert saved!</string>
   <string name="clear_all_deserts">Clear All Deserts</string>
   <string name="add_desert">Add Desert</string>
+    <string name="be_carefull">Be carefull!!\n500 calories</string>
+    <string name="be_carefull_list">Be carefull!!500 calories</string>
 </resources>

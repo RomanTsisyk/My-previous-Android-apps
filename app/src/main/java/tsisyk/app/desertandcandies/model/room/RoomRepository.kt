@@ -1,5 +1,6 @@
 package tsisyk.app.desertandcandies.model.room
 
+import android.content.Context
 import android.os.AsyncTask
 import androidx.lifecycle.LiveData
 import tsisyk.app.desertandcandies.app.DesertApplication
@@ -9,7 +10,7 @@ import tsisyk.app.desertandcandies.model.DesertRepository
 class RoomRepository : DesertRepository {
     private val desertDao: DesertDao = DesertApplication.database.desertDao()
 
-    private val allDeserts : LiveData<List<Desert>>
+    private val allDeserts: LiveData<List<Desert>>
 
     init {
         allDeserts = desertDao.getAllDeserts()
@@ -37,8 +38,11 @@ class RoomRepository : DesertRepository {
 
     override fun clearAllDeserts() {
         val desertArray = allDeserts.value?.toTypedArray()
-        if ( desertArray != null){
+        if (desertArray != null) {
             DeleteAsyncTask(desertDao).execute(*desertArray)
         }
     }
+
+
+
 }

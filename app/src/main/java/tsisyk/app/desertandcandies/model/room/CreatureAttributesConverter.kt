@@ -2,6 +2,7 @@ package tsisyk.app.desertandcandies.model.room
 
 import androidx.room.TypeConverter
 import tsisyk.app.desertandcandies.model.DesertAttributes
+import java.lang.Integer.*
 import java.util.*
 
 class DesertAttributesConverter {
@@ -18,9 +19,9 @@ class DesertAttributesConverter {
         if (value != null) {
             val pieces = value.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
             return DesertAttributes(
-                    java.lang.Integer.parseInt(pieces[0]),
-                    java.lang.Integer.parseInt(pieces[1]),
-                    java.lang.Integer.parseInt(pieces[2]))
+                    price = parseInt(pieces[0]),
+                    calories = parseInt(pieces[1]),
+                    taste = parseInt(pieces[2]))
         }
         return null
     }

@@ -3,25 +3,22 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginBottom="@dimen/dp_8"
-    android:layout_marginTop="@dimen/dp_8"
-    android:layout_marginStart="@dimen/dp_16"
-    android:layout_marginEnd="@dimen/dp_16"
-    android:id="@+id/desert_card"
+    app:cardElevation="@dimen/dp_8"
+    app:cardCornerRadius="@dimen/dp_16"
+    android:id="@+id/desert_list_card"
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_item_desert_height">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/listItemContainer"
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_desert_height">
 
         <ImageView
+            android:padding="@dimen/dp_16"
             android:id="@+id/avatarListItem"
             android:layout_width="@dimen/list_item_desert_height"
             android:layout_height="@dimen/list_item_desert_height"
-            android:layout_marginStart="@dimen/dp_16"
             android:contentDescription="@string/avatar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,9 +27,8 @@
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/desert_name_wight"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_16"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -47,9 +43,21 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_16"
             android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/name"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/handle"
+            app:layout_constraintStart_toEndOf="@+id/name"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="999" />
+
+        <ImageView
+            android:id="@+id/handle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_reorder_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

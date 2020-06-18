@@ -93,7 +93,7 @@ class DesertActivity : AppCompatActivity(), AvatarAdapter.AvatarListener {
     }
 
     private fun hideTapLabel() {
-        tapLabel.visibility = View.INVISIBLE
+        tapLabel.visibility = View.GONE
     }
 
     private fun configureLiveDataObservers() {

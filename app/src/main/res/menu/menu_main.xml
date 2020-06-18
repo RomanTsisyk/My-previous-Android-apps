@@ -7,4 +7,12 @@
     android:orderInCategory="100"
     android:title="@string/clear_all_deserts"
     app:showAsAction="never" />
+  <item
+      android:id="@+id/list_view"
+      android:orderInCategory="101"
+      android:title="Turn on list view" />
+  <item
+      android:id="@+id/grid_view"
+      android:orderInCategory="102"
+      android:title="Turn on grid view" />
 </menu>

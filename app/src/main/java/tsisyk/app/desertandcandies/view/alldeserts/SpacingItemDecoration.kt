@@ -3,6 +3,9 @@ package tsisyk.app.desertandcandies.view.alldeserts
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import tsisyk.app.desertandcandies.R
+import tsisyk.app.desertandcandies.app.inflate
+import java.lang.IllegalArgumentException
 
 
 class SpacingItemDecoration(private val spanCount: Int, private val spacing: Int)
