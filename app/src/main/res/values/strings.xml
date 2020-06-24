@@ -1,10 +1,10 @@
 <resources>
-  <string name="app_name">Desert ranking</string>
+  <string name="app_name">Kitty ranking</string>
   <string name="avatar">Avatar</string>
   <string name="tap_to_set_avatar">Tap to set avatar</string>
-  <string name="price">Price</string>
-  <string name="calories">Calories</string>
-  <string name="taste">Taste</string>
+  <string name="price">My opinion</string>
+  <string name="calories">His / her opinion</string>
+  <string name="taste">Emoji</string>
   <string name="name">Name</string>
   <string name="desert_name">Desert name</string>
   <string name="hit_points">HIT POINTS</string>
@@ -15,4 +15,5 @@
   <string name="add_desert">Add Desert</string>
     <string name="be_carefull">Be carefull!!\n500 calories</string>
     <string name="be_carefull_list">Be carefull!!500 calories</string>
+  <string name="age">Age</string>
 </resources>

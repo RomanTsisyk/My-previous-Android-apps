@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="tsisyk.app.desertandcandies">
+  package="tsisyk.app.kittyrank">
 
   <application
-    android:name=".app.DesertApplication"
+    android:name="tsisyk.app.kittyrank.app.DesertApplication"
     android:allowBackup="false"
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"

@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewmodel"
-            type="tsisyk.app.desertandcandies.viewmodel.DesertViewModel" />
+            type="tsisyk.app.kittyrank.viewmodel.DesertViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/cardview_light_background"
-        tools:context="tsisyk.app.desertandcandies.view.desert.DesertActivity">
+        tools:context="tsisyk.app.kittyrank.view.desert.DesertActivity">
 
         <TextView
             android:id="@+id/tapLabel"
@@ -29,8 +30,8 @@
 
         <ImageView
             android:id="@+id/avatarImageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
             android:layout_margin="@dimen/dp_16"
             android:contentDescription="@string/avatar"
             app:layout_constraintDimensionRatio="H,1:1"
@@ -46,84 +47,97 @@
             android:layout_margin="@dimen/dp_16"
             android:layout_marginTop="16dp"
             android:hint="@string/desert_name"
-            android:text="@={viewmodel.name}"
             android:inputType="text"
+            android:text="@={viewmodel.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/avatarImageView" />
 
         <TextView
-            android:id="@+id/priceLabel"
+            android:id="@+id/opinionLabel"
             style="@style/AppTheme.TextView"
-            android:layout_marginTop="16dp"
             android:text="@string/price"
-            app:layout_constraintEnd_toStartOf="@+id/caloriesLabel"
+            app:layout_constraintEnd_toStartOf="@+id/kitty_opinionLabel"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
         <TextView
-            android:id="@+id/caloriesLabel"
+            android:id="@+id/kitty_opinionLabel"
             style="@style/AppTheme.TextView"
             android:text="@string/calories"
-            app:layout_constraintBottom_toBottomOf="@+id/priceLabel"
-            app:layout_constraintEnd_toStartOf="@+id/tasteLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/opinionLabel"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/priceLabel"
-            app:layout_constraintTop_toTopOf="@+id/priceLabel" />
+            app:layout_constraintStart_toEndOf="@+id/opinionLabel"
+            app:layout_constraintTop_toTopOf="@+id/opinionLabel" />
 
 
         <TextView
-            android:id="@+id/tasteLabel"
+            android:id="@+id/emojiLabel"
             style="@style/AppTheme.TextView"
-
             android:text="@string/taste"
+            app:layout_constraintBottom_toBottomOf="@+id/ageLabel"
 
-            app:layout_constraintBottom_toBottomOf="@+id/caloriesLabel"
             app:layout_constraintEnd_toEndOf="parent"
-
-            app:layout_constraintStart_toEndOf="@+id/caloriesLabel"
-            app:layout_constraintTop_toTopOf="@+id/caloriesLabel" />
-
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ageLabel"
+            app:layout_constraintTop_toTopOf="@+id/ageLabel" />
 
         <Spinner
-            android:id="@+id/calories"
+            android:id="@+id/emoji"
             style="@style/AppTheme.SpinnerStyle"
-            app:layout_constraintEnd_toStartOf="@+id/taste"
-
-            app:layout_constraintStart_toEndOf="@+id/price"
-            app:layout_constraintTop_toBottomOf="@+id/caloriesLabel" />
+            app:layout_constraintBottom_toBottomOf="@+id/age"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/age"
+            app:layout_constraintTop_toTopOf="@+id/age" />
 
         <Spinner
-            android:id="@+id/price"
+            android:id="@+id/kitty_opinion"
+            style="@style/AppTheme.SpinnerStyle"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/opinion"
+            app:layout_constraintTop_toBottomOf="@+id/kitty_opinionLabel" />
+
+        <Spinner
+            android:id="@+id/opinion"
             style="@style/AppTheme.SpinnerStyle"
             android:tooltipText="@string/price"
-            app:layout_constraintBottom_toBottomOf="@+id/calories"
-
-            app:layout_constraintEnd_toStartOf="@+id/calories"
+            app:layout_constraintBottom_toBottomOf="@+id/kitty_opinion"
+            app:layout_constraintEnd_toStartOf="@+id/kitty_opinion"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/calories" />
+            app:layout_constraintTop_toTopOf="@+id/kitty_opinion" />
+
+
+        <TextView
+            android:id="@+id/ageLabel"
+            style="@style/AppTheme.TextView"
+            android:text="@string/age"
+            app:layout_constraintEnd_toStartOf="@+id/emojiLabel"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/opinion" />
 
         <Spinner
-            android:id="@+id/taste"
+            android:id="@+id/age"
             style="@style/AppTheme.SpinnerStyle"
-            app:layout_constraintBottom_toBottomOf="@+id/calories"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/calories"
-            app:layout_constraintTop_toTopOf="@+id/calories"/>
+            app:layout_constraintEnd_toStartOf="@+id/emoji"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ageLabel" />
 
         <TextView
             android:id="@+id/hitPoints"
+            android:gravity="center"
             style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.437"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="@dimen/dp_16"
+            android:background="@drawable/ranking"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calories"
-            tools:text="100" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <Button
             android:id="@+id/saveButton"
@@ -131,8 +145,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_16"
             android:layout_marginBottom="8dp"
-            android:text="@string/save"
             android:onClick="@{()-> viewmodel.saveDesert()}"
+            android:text="@string/save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

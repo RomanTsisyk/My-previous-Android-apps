@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "tsisyk.app.desertandcandies"
+        applicationId "tsisyk.app.kittyrank"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
