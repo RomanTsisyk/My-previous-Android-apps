@@ -1,18 +1,15 @@
 <resources>
   <string name="app_name">Kitty ranking</string>
   <string name="avatar">Avatar</string>
-  <string name="tap_to_set_avatar">Tap to set avatar</string>
-  <string name="price">My opinion</string>
-  <string name="calories">His / her opinion</string>
-  <string name="taste">Emoji</string>
+  <string name="tap_to_set_avatar">Tap to set kitty avatar</string>
   <string name="name">Name</string>
-  <string name="desert_name">Desert name</string>
+  <string name="desert_name">Kitty name</string>
   <string name="hit_points">HIT POINTS</string>
   <string name="save">SAVE</string>
   <string name="error_saving_desert">Please complete all fields.</string>
-  <string name="desert_saved">Desert saved!</string>
-  <string name="clear_all_deserts">Clear All Deserts</string>
-  <string name="add_desert">Add Desert</string>
+  <string name="desert_saved">Kitty saved!</string>
+  <string name="clear_all_deserts">Clear All KITTIES</string>
+  <string name="add_desert">Add Kitty</string>
     <string name="be_carefull">Be carefull!!\n500 calories</string>
     <string name="be_carefull_list">Be carefull!!500 calories</string>
   <string name="age">Age</string>

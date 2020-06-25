@@ -11,6 +11,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="@dimen/dp_16"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/cardview_light_background"
@@ -44,7 +45,7 @@
             android:id="@+id/nameEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_16"
             android:layout_marginTop="16dp"
             android:hint="@string/desert_name"
             android:inputType="text"
@@ -53,36 +54,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/avatarImageView" />
 
-        <TextView
-            android:id="@+id/opinionLabel"
-            style="@style/AppTheme.TextView"
-            android:text="@string/price"
-            app:layout_constraintEnd_toStartOf="@+id/kitty_opinionLabel"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
-
-        <TextView
-            android:id="@+id/kitty_opinionLabel"
-            style="@style/AppTheme.TextView"
-            android:text="@string/calories"
-            app:layout_constraintBottom_toBottomOf="@+id/opinionLabel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/opinionLabel"
-            app:layout_constraintTop_toTopOf="@+id/opinionLabel" />
-
-
-        <TextView
-            android:id="@+id/emojiLabel"
-            style="@style/AppTheme.TextView"
-            android:text="@string/taste"
-            app:layout_constraintBottom_toBottomOf="@+id/ageLabel"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/ageLabel"
-            app:layout_constraintTop_toTopOf="@+id/ageLabel" />
 
         <Spinner
             android:id="@+id/emoji"
@@ -99,26 +70,16 @@
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/opinion"
-            app:layout_constraintTop_toBottomOf="@+id/kitty_opinionLabel" />
+            app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
         <Spinner
             android:id="@+id/opinion"
             style="@style/AppTheme.SpinnerStyle"
-            android:tooltipText="@string/price"
             app:layout_constraintBottom_toBottomOf="@+id/kitty_opinion"
             app:layout_constraintEnd_toStartOf="@+id/kitty_opinion"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/kitty_opinion" />
 
-
-        <TextView
-            android:id="@+id/ageLabel"
-            style="@style/AppTheme.TextView"
-            android:text="@string/age"
-            app:layout_constraintEnd_toStartOf="@+id/emojiLabel"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/opinion" />
 
         <Spinner
             android:id="@+id/age"
@@ -126,15 +87,16 @@
             app:layout_constraintEnd_toStartOf="@+id/emoji"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ageLabel" />
+            app:layout_constraintTop_toBottomOf="@+id/opinion" />
 
         <TextView
             android:id="@+id/hitPoints"
             android:gravity="center"
-            style="@style/TextAppearance.AppCompat.Title"
+            style="@style/TextAppearance.AppCompat.Display3"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="@dimen/dp_16"
+            android:text="x"
             android:background="@drawable/ranking"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -143,8 +105,7 @@
             android:id="@+id/saveButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_16"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/dp_16"
             android:onClick="@{()-> viewmodel.saveDesert()}"
             android:text="@string/save"
             app:layout_constraintBottom_toBottomOf="parent"
