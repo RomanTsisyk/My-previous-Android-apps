@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="dp_8">8dp</dimen>
+  <dimen name="dp_16">16dp</dimen>
+  <dimen name="list_item_desert_height">100dp</dimen>
+  <dimen name="spinener_widht">200dp</dimen>
+  <dimen name="desert_card_list_lauout_margin">16dp</dimen>
+  <dimen name="desert_card_grid_lauout_margin">8dp</dimen>
+    <dimen name="desert_name_wight">128dp</dimen>
+</resources>
