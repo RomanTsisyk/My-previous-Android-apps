@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "title_home"> Code </string>
+         <string name = "title_dashboard"> Test </string>
+         <string name = "title_notifications"> Selesai </string>
+         <string name = "hello_blank_fragment"> Halo blank fragment </string>
+         <string name = "title_is_missing"> judul tidak ada </string>
+         <string name = "description_is_missing"> deskripsi tidak ada </string>
+         <string name = "yes"> Ya </string>
+         <string name = "no"> Tidak </string>
+         <string name = "undo"> Anda tidak dapat membatalkan operasi ini </string>
+         <string name = "are_you_sure"> Apakah Anda yakin? </string>
+         <string name = "delete"> Hapus </string>
+         <string name = "in_progress"> sedang berlangsung </string>
+         <string name = "review"> ulasan </string>
+         <string name = "test"> test </string>
+         <string name = "done"> done </string>
+         <string name = "blocked"> diblokir </string>
+    <string name = "title"> Judul </string>
+         <string name = "text"> Teks </string>
+         <string name = "save"> Simpan </string>
+         <string name = "task_title"> Judul tugas </string>
+         <string name = "task_description"> Deskripsi tugas </string>
+         <string name = "edit_task"> Edit tugas </string>
+</resources>

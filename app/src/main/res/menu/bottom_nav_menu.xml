@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/in_progress" />
+
+    <item
+        android:id="@+id/navigation_review"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/review" />
+
+    <item
+        android:id="@+id/navigation_test"
+        android:icon="@drawable/ic_touch_app_black_24dp"
+        android:title="@string/test" />
+
+    <item
+        android:id="@+id/navigation_done"
+        android:icon="@drawable/ic_verified_user_black_24dp"
+        android:title="@string/done" />
+
+    <item
+        android:id="@+id/navigation_blocked"
+        android:icon="@drawable/ic_highlight_off_black_24dp"
+        android:title="@string/blocked" />
+
+
+</menu>

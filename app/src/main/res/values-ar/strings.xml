@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "title_home"> الرمز </string>
+         <string name = "title_dashboard"> اختبار </string>
+         <string name = "title_notifications"> تم </string>
+         <string name = "hello_blank_fragment"> مرحبًا ، جزء فارغ </string>
+         <string name = "title_is_missing"> العنوان مفقود </string>
+         <string name = "description_is_missing"> الوصف مفقود </string>
+         <string name = "yes"> نعم </string>
+         <string name = "no"> لا </string>
+         <string name = "undo"> لا يمكنك التراجع عن هذه العملية </string>
+         <string name = "are_you_sure"> هل أنت متأكد؟ </string>
+         <string name = "delete"> حذف </string>
+         <string name = "in_progress"> قيد التقدم </string>
+         <string name = "review"> مراجعة </string>
+         <string name = "test"> test </string>
+         <string name = "done"> تم </string>
+         <string name = "blocked"> محظور </string>
+    <string name = "title"> Titel </string>
+         <string name = "text"> Teks </string>
+         <string name = "save"> Stoor </string>
+         <string name = "task_title"> Taak titel </string>
+         <string name = "task_description"> Taakbeskrywing </string>
+         <string name = "edit_task"> Bewerk taak </string></resources>

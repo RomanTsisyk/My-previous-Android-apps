@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "title_home"> Kode </string>
+         <string name = "title_dashboard"> Test </string>
+         <string name = "title_notifications"> Udført </string>
+         <string name = "hello_blank_fragment"> Hej tomt fragment </string>
+         <string name = "title_is_missing"> titel mangler </string>
+         <string name = "description_is_missing"> beskrivelse mangler </string>
+         <string name = "yes"> Ja </string>
+         <string name = "no"> Nej </string>
+         <string name = "undo"> Du kan ikke fortryde denne handling </string>
+         <string name = "are_you_sure"> Er du sikker? </string>
+         <string name = "delete"> Slet </string>
+         <string name = "in_progress"> i gang </string>
+         <string name = "review"> anmeldelse </string>
+         <string name = "test"> test </string>
+         <string name = "done"> færdig </string>
+         <string name = "blocked"> blokeret </string>
+    <string name = "title"> Titel </string>
+         <string name = "text"> Tekst </string>
+         <string name = "save"> Gem </string>
+         <string name = "task_title"> Opgavens titel </string>
+         <string name = "task_description"> Opgavebeskrivelse </string>
+         <string name = "edit_task"> Rediger opgave </string>
+</resources>
