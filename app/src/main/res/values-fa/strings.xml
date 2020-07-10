@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home"> کد </string>
+    <string name="title_dashboard">تست </string>
+    <string name="title_notifications">انجام شد</string>
+    <string name="hello_blank_fragment"> سلام قطعه خالی</string>
+    <string name="title_is_missing">  وجود ندارد </string>
+    <string name="description_is_missing"> توضیحات وجود ندارد </string>
+    <string name="yes">بله </string>
+    <string name="no">خیر </string>
+    <string name="undo">خنثیسازی"> شما نمی توانید این عملیات را خنثیسازی کنید</string>
+    <string name="are_you_sure">مطمئن هستید؟</string>
+    <string name="delete">Delete</string>
+    <string name="in_progress"> در حال انجام است</string>
+    <string name="review">review</string>
+    <string name="test">test</string>
+    <string name="done">انجام شده"> انجام شد</string>
+    <string name="blocked">مسدود شده"> مسدود شده</string>
+    <string name = "title"> عنوان </string>
+         <string name = "text"> متن </string>
+         <string name = "save"> ذخیره </string>
+         <string name = "task_title"> عنوان کار </string>
+         <string name = "task_description"> شرح وظیفه </string>
+         <string name = "edit_task"> ویرایش کار </string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home"> Código </string>
+    <string name="title_dashboard"> Prueba </string>
+    <string name="title_notifications"> Listo </string>
+    <string name="hello_blank_fragment"> Hola fragmento en blanco </string>
+    <string name="title_is_missing"> falta el título </string>
+    <string name="description_is_missing"> falta la descripción </string>
+    <string name="yes"> Sí </string>
+    <string name="no"> No </string>
+    <string name="undo"> No puede deshacer esta operación </string>
+    <string name="are_you_sure"> ¿Estás seguro? </string>
+    <string name="delete"> Eliminar </string>
+    <string name="in_progress"> en progreso </string>
+    <string name="review"> review </string>
+    <string name="test"> prueba </string>
+    <string name="done"> hecho </string>
+    <string name="blocked"> bloqueado </string>
+    <string name = "title"> Título </string>
+         <string name = "text"> Texto </string>
+         <string name = "save"> Guardar </string>
+         <string name = "task_title"> Título de la tarea </string>
+         <string name = "task_description"> Descripción de la tarea </string>
+         <string name = "edit_task"> Editar tarea </string>
+</resources>

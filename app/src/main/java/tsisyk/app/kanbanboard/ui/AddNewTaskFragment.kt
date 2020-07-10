@@ -7,11 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.view.get
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_add_new_task.*
 import kotlinx.coroutines.launch
 import tsisyk.app.kanbanboard.data.Task
 import tsisyk.app.kanbanboard.data.TaskDatabase
+import tsisyk.app.kanbanboard.utiliies.State
 import tsisyk.app.kanbanboard.utiliies.State.*
 
 
@@ -33,28 +35,21 @@ class AddNewTaskFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-//        if (task != null) spinner.visibility = View.VISIBLE else spinner.visibility = View.INVISIBLE
-
         arguments?.let {
-
             task = AddNewTaskFragmentArgs.fromBundle(it).tsakNote
             editTextTitle.setText(task?.title)
             editTextDescription.setText(task?.description)
-
-
             val values = arrayOf(IN_PROGRESS, PEER_REVIREW, IN_TEST, BLOKED, DONE)
             val adapter = ArrayAdapter(this.activity!!, R.layout.simple_spinner_item, values)
             adapter.setDropDownViewResource(R.layout.simple_dropdown_item_1line)
             spinner.adapter = adapter
-
         }
-
 
         button_delete.setOnClickListener {
             AlertDialog.Builder(context).apply {
-                setTitle("Are you sure?")
-                setMessage("You cannot undo this operation")
-                setPositiveButton("Yes") { _, _ ->
+                val title = setTitle(getString(tsisyk.app.kanbanboard.R.string.are_you_sure))
+                setMessage(getString(tsisyk.app.kanbanboard.R.string.undo))
+                setPositiveButton(getString(tsisyk.app.kanbanboard.R.string.yes)) { _, _ ->
                     launch {
                         TaskDatabase(context).getTaskDao().deleteTask(task!!)
                         val action =
@@ -62,7 +57,7 @@ class AddNewTaskFragment : BaseFragment() {
                         Navigation.findNavController(view!!).navigate(action)
                     }
                 }
-                setNegativeButton("No") { _, _ ->
+                setNegativeButton(getString(tsisyk.app.kanbanboard.R.string.no)) { _, _ ->
 
                 }
             }.create().show()
@@ -72,17 +67,16 @@ class AddNewTaskFragment : BaseFragment() {
         buttonSave.setOnClickListener { view ->
             val descriptionTask = editTextDescription.text.trim().toString()
             val titleTask = editTextTitle.text.trim().toString()
-//            val state = "IN_PROGRESS"
             val state = spinner.selectedItem.toString()
 
             if (descriptionTask.isEmpty()) {
-                editTextDescription.error = "description is missing"
+                editTextDescription.error = getString(tsisyk.app.kanbanboard.R.string.description_is_missing)
                 editTextDescription.requestFocus()
                 return@setOnClickListener
             }
 
             if (titleTask.isEmpty()) {
-                editTextTitle.error = "title is missing"
+                editTextTitle.error = getString(tsisyk.app.kanbanboard.R.string.title_is_missing)
                 editTextTitle.requestFocus()
                 return@setOnClickListener
             }

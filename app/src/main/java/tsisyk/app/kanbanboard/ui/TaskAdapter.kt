@@ -36,8 +36,14 @@ class TaskAdapter(private val tasks: List<Task>) :
 
 
         holder.view.setOnClickListener {
-            val cationNumber = HomeFragmentDirections.actionHomeToNew(tsakNote = tasks[position])
-            Navigation.findNavController(it).navigate(cationNumber)
+            when (tasks[position].state){
+                DONE.toString() -> Navigation.findNavController(it).navigate( DoneFragmentDirections.actionNavigationDoneToAddNewNoteFragment(tsakNote = tasks[position]))
+                IN_PROGRESS.toString() -> Navigation.findNavController(it).navigate( HomeFragmentDirections.actionHomeToNew(tsakNote = tasks[position]))
+                PEER_REVIREW.toString() -> Navigation.findNavController(it).navigate( ReviewFragmentDirections.actionNavigationReviewToAddNewNoteFragment(tsakNote = tasks[position]))
+                IN_TEST.toString() -> Navigation.findNavController(it).navigate( TestFragmentDirections.actionNavigationTestToAddNewNoteFragment(tsakNote = tasks[position]))
+                BLOKED.toString() -> Navigation.findNavController(it).navigate( BlokedFragmentDirections.actionNavigationBlockedToAddNewNoteFragment(tsakNote = tasks[position]))
+            }
+
         }
     }
 

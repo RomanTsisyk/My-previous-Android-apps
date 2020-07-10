@@ -1,9 +1,25 @@
 <resources>
-    <string name="app_name">Kanbanboard</string>
+    <string name="app_name" translatable="false">Kanbanboard</string>
     <string name="title_home">Code</string>
     <string name="title_dashboard">Test</string>
     <string name="title_notifications">Done</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_is_missing">title is missing</string>
+    <string name="description_is_missing">description is missing</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="undo">You cannot undo this operation</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="delete">Delete</string>
+    <string name="in_progress">in progress</string>
+    <string name="review">review</string>
+    <string name="test">test</string>
+    <string name="done">done</string>
+    <string name="blocked">blocked</string>
+    <string name="title">Title</string>
+    <string name="text">Text</string>
+    <string name="save">Save</string>
+    <string name="task_title">Task title</string>
+    <string name="task_description">Task description</string>
+    <string name="edit_task">Edit task</string>
 </resources>

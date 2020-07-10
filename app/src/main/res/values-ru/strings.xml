@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "title_home"> Код </string>
+         <string name = "title_dashboard"> Test </string>
+         <string name = "title_notifications"> Готово </string>
+         <string name = "hello_blank_fragment"> Привет пустой фрагмент </string>
+         <string name = "title_is_missing"> заголовок отсутствует </string>
+         <string name = "description_is_missing"> описание отсутствует </string>
+         <string name = "yes"> Да </string>
+         <string name = "no"> Нет </string>
+         <string name = "undo"> Вы не можете отменить эту операцию </string>
+         <string name = "are_you_sure"> Вы уверены? </string>
+         <string name = "delete"> Удалить </string>
+         <string name = "in_progress"> в процессе </string>
+         <string name = "review"> review </string>
+         <string name = "test"> test </string>
+         <string name = "done"> done </string>
+         <string name = "blocked"> заблокирован </string>
+    <string name = "title"> Title </string>
+         <string name = "text"> Text </string>
+         <string name = "save"> Save </string>
+         <string name = "task_title"> Название задачи </string>
+         <string name = "task_description"> Описание задачи </string>
+         <string name = "edit_task"> Изменить задачу </string>
+</resources>

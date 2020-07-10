@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "title_home"> Code </string>
+         <string name = "title_dashboard"> Test </string>
+         <string name = "title_notifications"> Done </string>
+         <string name = "hello_blank_fragment"> Dobrý den, prázdný fragment </string>
+         <string name = "title_is_missing"> název chybí </string>
+         <string name = "description_is_missing"> popis chybí </string>
+         <string name = "yes"> Yes </string>
+         <string name = "no"> No </string>
+         <string name = "undo"> Tuto operaci nelze vrátit zpět </string>
+         <string name = "are_you_sure"> Jste si jistý? </string>
+         <string name = "delete"> Delete </string>
+         <string name = "in_progress"> probíhá </string>
+         <string name = "review"> review </string>
+         <string name = "test"> test </string>
+         <string name = "done"> done </string>
+         <string name = "blocked"> blokovaný </string>
+    <string name = "title"> Title </string>
+         <string name = "text"> Text </string>
+         <string name = "save"> Save </string>
+         <string name = "task_title"> Název úlohy </string>
+         <string name = "task_description"> Popis úlohy </string>
+         <string name = "edit_task"> Upravit úlohu </string>
+</resources>
