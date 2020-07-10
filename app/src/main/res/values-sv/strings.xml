@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ljud dagbok</string>
+    <string name="cancel">Annullera</string>
+    <string name="default_name_record">spela in#_</string>
+    <string name="error_start">Inspelningsprogrammet körs i bakgrunden. Stäng det först.</string>
+    <string name="file_exists">Filnamn finns redan</string>
+    <string name="list_name">Ljudlista</string>
+    <string name="name_record">Spela in namn</string>
+    <string name="no_save_button">Spara inte denna post</string>
+    <string name="no_save_file">Spara inte</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">Döpa om</string>
+    <string name="saving">Sparande…</string>
+    <string name="start_recording">Haga clic en el botón para iniciar la grabación.</string>
+    <string name="state_pause">Paus</string>
+    <string name="state_recording">Inspelning</string>
+</resources>

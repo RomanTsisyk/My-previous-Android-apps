@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Diário de áudio</string>
+    <string name="cancel">Cancelar</string>
+    <string name="default_name_record">registro#_</string>
+    <string name="error_start">O aplicativo de gravação está sendo executado em segundo plano. Feche primeiro.</string>
+    <string name="file_exists">O nome do arquivo já existe</string>
+    <string name="list_name">Lista de áudio</string>
+    <string name="name_record">Nome do registro</string>
+    <string name="no_save_button">Não salve esse registro</string>
+    <string name="no_save_file">Não salve</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">Renomear</string>
+    <string name="saving">Salvando ...</string>
+    <string name="start_recording">Clique no botão para começar a gravar</string>
+    <string name="state_pause">Pausa</string>
+    <string name="state_recording">Gravação</string>
+</resources>

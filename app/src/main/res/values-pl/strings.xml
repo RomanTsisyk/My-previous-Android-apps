@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dziennik audio</string>
+    <string name="cancel">Anuluj</string>
+    <string name="default_name_record">rekord#_</string>
+    <string name="error_start">Aplikacja do nagrywania działa w tle. Najpierw zamknij.</string>
+    <string name="file_exists">Nazwa pliku już istnieje</string>
+    <string name="list_name">Lista audio</string>
+    <string name="name_record">Nazwa rekordu</string>
+    <string name="no_save_button">Nie zapisuj tego rekordu</string>
+    <string name="ok">OK</string>
+    <string name="no_save_file">Nie zapisuj</string>
+    <string name="rename_file">Przemianować</string>
+    <string name="saving">Oszczędność...</string>
+    <string name="start_recording">Kliknij przycisk, aby rozpocząć nagrywanie</string>
+    <string name="state_pause">Pauza</string>
+    <string name="state_recording">Nagranie</string>
+</resources>

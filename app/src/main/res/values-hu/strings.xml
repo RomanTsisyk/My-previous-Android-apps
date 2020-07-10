@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Audio napló</string>
+    <string name="cancel">Megszünteti</string>
+    <string name="default_name_record">rekord#_</string>
+    <string name="error_start">A felvételi alkalmazás a háttérben fut. Zárja be először.</string>
+    <string name="file_exists">A fájlnév már létezik</string>
+    <string name="list_name">Audio lista</string>
+    <string name="name_record">Felvétel neve</string>
+    <string name="no_save_button">Ne mentse el ezt a rekordot</string>
+    <string name="no_save_file">Ne mentse</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">átnevezése</string>
+    <string name="saving">Megtakarítás...</string>
+    <string name="start_recording">A felvétel elindításához kattintson a gombra</string>
+    <string name="state_pause">Szünet</string>
+    <string name="state_recording">Felvétel</string>
+</resources>

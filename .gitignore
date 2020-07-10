@@ -11,4 +11,7 @@
 /build
 /captures
 .externalNativeBuild
+<<<<<<< HEAD
 .cxx
+=======
+>>>>>>> Audio_Diary/master

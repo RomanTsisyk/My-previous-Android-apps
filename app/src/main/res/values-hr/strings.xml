@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Audio dnevnik</string>
+    <string name="cancel">Otkazati</string>
+    <string name="default_name_record">snimiti#_</string>
+    <string name="error_start">Aplikacija za snimanje radi u pozadini. Prvo ga zatvorite.</string>
+    <string name="file_exists">Naziv datoteke već postoji</string>
+    <string name="list_name">Popis audiozapisa</string>
+    <string name="name_record">Naziv zapisa</string>
+    <string name="no_save_button">Ne spremajte ovaj zapis</string>
+    <string name="no_save_file">Ne štedi</string>
+    <string name="ok">OK</string>
+    <string name="rename_file">Preimenovati</string>
+    <string name="saving">Ušteda...</string>
+    <string name="start_recording">Kliknite gumb za početak snimanja</string>
+    <string name="state_pause">Pauza</string>
+    <string name="state_recording">Snimanje</string>
+</resources>

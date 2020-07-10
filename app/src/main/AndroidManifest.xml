@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tsisyk.app.diary"
+    android:installLocation="preferExternal">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="tsisyk.app.diary.activities.AboutMeActivity"
+            android:parentActivityName=".activities.DiaryActivity"
+            android:label="@string/title_activity_about_me"/>
+        <activity
+            android:name="tsisyk.app.diary.activities.PrivacyActivity"
+            android:label="@string/title_activity_privacy"
+            android:parentActivityName=".activities.AboutMeActivity" />
+        <activity
+            android:name="tsisyk.app.diary.activities.LicenseActivity"
+            android:label="@string/title_activity_license"
+            android:parentActivityName=".activities.AboutMeActivity" />
+        <activity
+            android:name="tsisyk.app.diary.activities.CancelDialogActivity"
+            android:excludeFromRecents="true"
+            android:parentActivityName="tsisyk.app.diary.activities.DiaryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/UserDialog" />
+        <activity
+            android:name="tsisyk.app.diary.activities.PlayerActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/UserDialog" />
+        <activity
+            android:name="tsisyk.app.diary.activities.EditTextActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/UserDialog" />
+        <activity
+            android:name="tsisyk.app.diary.activities.ListRecordsActivity"
+            android:label="@string/list_name"
+            android:parentActivityName=".activities.DiaryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="tsisyk.app.diary.activities.DiaryActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="tsisyk.app.diary.service.DictaphoneService.DictaphoneService" />
+    </application>
+
+</manifest>
