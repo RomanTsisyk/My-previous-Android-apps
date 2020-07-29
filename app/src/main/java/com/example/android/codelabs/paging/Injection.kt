@@ -16,10 +16,9 @@
 
 package com.example.android.codelabs.paging
 
-import android.content.Context
 import androidx.lifecycle.ViewModelProvider
-import com.example.android.codelabs.paging.api.GithubService
-import com.example.android.codelabs.paging.data.GithubRepository
+import com.example.android.codelabs.paging.api.ApiService
+import com.example.android.codelabs.paging.data.Repository
 import com.example.android.codelabs.paging.ui.ViewModelFactory
 
 /**
@@ -30,11 +29,11 @@ import com.example.android.codelabs.paging.ui.ViewModelFactory
 object Injection {
 
     /**
-     * Creates an instance of [GithubRepository] based on the [GithubService] and a
+     * Creates an instance of [Repository] based on the [ApiService] and a
      * [GithubLocalCache]
      */
-    private fun provideGithubRepository(): GithubRepository {
-        return GithubRepository(GithubService.create())
+    private fun provideGithubRepository(): Repository {
+        return Repository(ApiService.create())
     }
 
     /**

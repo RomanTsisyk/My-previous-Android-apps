@@ -19,30 +19,31 @@ package com.example.android.codelabs.paging.ui
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.example.android.codelabs.paging.model.Repo
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.android.codelabs.paging.model.Result
 
 /**
  * Adapter for the list of repositories.
  */
-class ReposAdapter : ListAdapter<Repo, androidx.recyclerview.widget.RecyclerView.ViewHolder>(REPO_COMPARATOR) {
+class CharacterAdapter : ListAdapter<Result, ViewHolder>(REPO_COMPARATOR) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
-        return RepoViewHolder.create(parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return CharacterViewHolder.create(parent)
     }
 
-    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val repoItem = getItem(position)
         if (repoItem != null) {
-            (holder as RepoViewHolder).bind(repoItem)
+            (holder as CharacterViewHolder).bind(repoItem)
         }
     }
 
     companion object {
-        private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<Repo>() {
-            override fun areItemsTheSame(oldItem: Repo, newItem: Repo): Boolean =
-                    oldItem.fullName == newItem.fullName
+        private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<Result>() {
+            override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean =
+                    oldItem.name == newItem.name
 
-            override fun areContentsTheSame(oldItem: Repo, newItem: Repo): Boolean =
+            override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean =
                     oldItem == newItem
         }
     }

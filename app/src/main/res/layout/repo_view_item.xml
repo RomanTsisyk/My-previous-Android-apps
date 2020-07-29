@@ -15,18 +15,21 @@
   ~ limitations under the License.
   -->
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="8dp"
+    app:cardCornerRadius="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="@dimen/row_item_margin_horizontal"
-    android:paddingTop="@dimen/row_item_margin_vertical"
-    tools:ignore="UnusedAttribute">
+    app:cardBackgroundColor="#DAC1C1"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/repo_name"
+        android:id="@+id/character_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColor="@color/titleColor"
@@ -34,10 +37,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="android-architecture"/>
+        tools:text="NAME"/>
 
     <TextView
-        android:id="@+id/repo_description"
+        android:id="@+id/repo_location"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:maxLines="10"
@@ -46,61 +49,43 @@
         android:textSize="@dimen/repo_description_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repo_name"
+        app:layout_constraintTop_toBottomOf="@+id/character_name"
         tools:ignore="UnusedAttribute"
-        tools:text="A collection of samples to discuss and showcase different architectural tools and patterns for Android apps."/>
+        tools:text="location"/>
 
     <TextView
-        android:id="@+id/repo_language"
+        android:id="@+id/chapter_gender"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:paddingVertical="@dimen/row_item_margin_vertical"
-        android:text="@string/language"
+        android:text="gender"
         android:textSize="@dimen/repo_description_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repo_description"
+        app:layout_constraintTop_toBottomOf="@+id/repo_location"
         tools:ignore="RtlCompat"/>
 
-    <ImageView
-        android:id="@+id/star"
-        android:layout_width="0dp"
-        android:layout_marginVertical="@dimen/row_item_margin_vertical"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_star"
-        app:layout_constraintEnd_toStartOf="@+id/repo_stars"
-        app:layout_constraintBottom_toBottomOf="@+id/repo_stars"
-        app:layout_constraintTop_toTopOf="@+id/repo_stars"
-    />
 
     <TextView
-        android:id="@+id/repo_stars"
+        android:id="@+id/chapter_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingVertical="@dimen/row_item_margin_vertical"
         android:textSize="@dimen/repo_description_size"
-        app:layout_constraintEnd_toStartOf="@id/forks"
-        app:layout_constraintBaseline_toBaselineOf="@+id/repo_forks"
-        tools:text="30"/>
-
-    <ImageView
-        android:id="@+id/forks"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/row_item_margin_vertical"
-        android:src="@drawable/ic_git_branch"
-        app:layout_constraintEnd_toStartOf="@+id/repo_forks"
-        app:layout_constraintBottom_toBottomOf="@+id/repo_forks"
-        app:layout_constraintTop_toTopOf="@+id/repo_forks"
-    />
+        app:layout_constraintBaseline_toBaselineOf="@+id/chapter_id"
+        app:layout_constraintEnd_toStartOf="@+id/chapter_id"
+        app:layout_constraintStart_toEndOf="@+id/chapter_gender"
+        tools:text="Status" />
 
     <TextView
-        android:id="@+id/repo_forks"
+        android:id="@+id/chapter_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingVertical="@dimen/row_item_margin_vertical"
         android:textSize="@dimen/repo_description_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repo_description"
-        tools:text="30"/>
+        app:layout_constraintTop_toBottomOf="@+id/repo_location"
+        tools:text="id"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

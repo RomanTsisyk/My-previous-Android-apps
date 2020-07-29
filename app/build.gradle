@@ -82,4 +82,8 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test:runner:$runnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+
+    // cardview
+    implementation "androidx.cardview:cardview:1.0.0"
+
 }

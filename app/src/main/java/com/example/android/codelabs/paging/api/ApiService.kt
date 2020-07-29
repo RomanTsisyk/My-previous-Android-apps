@@ -19,32 +19,29 @@ package com.example.android.codelabs.paging.api
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-const val IN_QUALIFIER = "in:name,description"
 
 /**
- * Github API communication setup via Retrofit.
+ * https://rickandmortyapi.com setup via Retrofit.
  */
-interface GithubService {
+interface ApiService {
     /**
-     * Get repos ordered by stars.
+     * Get characters.
      */
-    @GET("search/repositories?sort=stars")
+    @GET("character/")
     suspend fun searchRepos(
-            @Query("q") query: String,
-            @Query("page") page: Int,
-            @Query("per_page") itemsPerPage: Int
-    ): RepoSearchResponse
+            @Query("name") query: String,
+            @Query("page") page: Int
+    ): ApiResponse
 
     companion object {
-        private const val BASE_URL = "https://api.github.com/"
+        private const val BASE_URL = "https://rickandmortyapi.com/api/"
 
-        fun create(): GithubService {
+        fun create(): ApiService {
             val logger = HttpLoggingInterceptor()
             logger.level = Level.BASIC
 
@@ -56,7 +53,7 @@ interface GithubService {
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
-                    .create(GithubService::class.java)
+                    .create(ApiService::class.java)
         }
     }
 }

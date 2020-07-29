@@ -23,6 +23,6 @@ import java.lang.Exception
  * and a String of network error state.
  */
 sealed class RepoSearchResult {
-    data class Success(val data: List<Repo>) : RepoSearchResult()
+    data class Success(val data: List<Result>) : RepoSearchResult()
     data class Error(val error: Exception) : RepoSearchResult()
 }

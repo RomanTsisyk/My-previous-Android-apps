@@ -34,11 +34,11 @@ import com.example.android.codelabs.paging.model.RepoSearchResult
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @ExperimentalCoroutinesApi
-class SearchRepositoriesActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySearchRepositoriesBinding
     private lateinit var viewModel: SearchRepositoriesViewModel
-    private val adapter = ReposAdapter()
+    private val adapter = CharacterAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,7 +79,7 @@ class SearchRepositoriesActivity : AppCompatActivity() {
                 is RepoSearchResult.Error -> {
                     Toast.makeText(
                             this,
-                            "\uD83D\uDE28 Wooops $result.message}",
+                            " $result}",
                             Toast.LENGTH_LONG
                     ).show()
                 }

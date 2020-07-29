@@ -18,12 +18,12 @@ package com.example.android.codelabs.paging.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.android.codelabs.paging.data.GithubRepository
+import com.example.android.codelabs.paging.data.Repository
 
 /**
  * Factory for ViewModels
  */
-class ViewModelFactory(private val repository: GithubRepository) : ViewModelProvider.Factory {
+class ViewModelFactory(private val repository: Repository) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SearchRepositoriesViewModel::class.java)) {
