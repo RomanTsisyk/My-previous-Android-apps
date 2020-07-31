@@ -49,8 +49,8 @@ class SearchRepositoriesViewModel(private val repository: Repository) : ViewMode
         queryLiveData.postValue(queryString)
     }
 
-    fun listScrolled(visibleItemCount: Int, lastVisibleItemPosition: Int, totalItemCount: Int) {
-        if (visibleItemCount + lastVisibleItemPosition + VISIBLE_THRESHOLD >= totalItemCount) {
+    fun listScrolled(visibleItemCount: Int,  totalItemCount: Int) {
+        if (visibleItemCount + VISIBLE_THRESHOLD >= totalItemCount) {
             val immutableQuery = queryLiveData.value
             if (immutableQuery != null) {
                 viewModelScope.launch {

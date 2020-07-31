@@ -38,6 +38,13 @@ interface ApiService {
             @Query("page") page: Int
     ): ApiResponse
 
+
+    @GET("character/")
+    suspend fun loadData(
+            @Query("page") page: Int
+    ): ApiResponse
+
+
     companion object {
         private const val BASE_URL = "https://rickandmortyapi.com/api/"
 

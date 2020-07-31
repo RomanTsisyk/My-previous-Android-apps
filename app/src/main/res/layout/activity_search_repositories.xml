@@ -32,10 +32,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:visibility="gone"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+
         <EditText
             android:id="@+id/search_repo"
             android:layout_width="match_parent"
@@ -51,14 +54,15 @@
         android:id="@+id/list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="@dimen/row_item_margin_vertical"
-        android:scrollbars="vertical"
-        app:layoutManager="LinearLayoutManager"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_layout"
-        tools:ignore="UnusedAttribute"/>
+        app:spanCount="2"
+        tools:ignore="UnusedAttribute" />
 
     <TextView android:id="@+id/emptyList"
               android:layout_width="0dp"

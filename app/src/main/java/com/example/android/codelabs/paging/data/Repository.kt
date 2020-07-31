@@ -79,10 +79,9 @@ class Repository(private val service: ApiService) {
         isRequestInProgress = true
         var successful = false
 
-        val apiQuery = query
-//        + IN_QUALIFIER
         try {
-            val response = service.searchRepos(apiQuery, lastRequestedPage)
+            val response = service.loadData( lastRequestedPage)
+//            val response = service.searchRepos(query, lastRequestedPage)
             Log.d("GithubRepository", "response $response")
             val repos = response.results ?: emptyList()
             inMemoryCache.addAll(repos)
@@ -101,12 +100,13 @@ class Repository(private val service: ApiService) {
     private fun reposByName(query: String): List<Result> {
         // from the in memory cache select only the repos whose name or description matches
         // the query. Then order the results.
-        return inMemoryCache.filter {
-            it.name.contains(query, true)
-        }.sortedWith(compareByDescending<Result> { it.id }.thenBy { it.name })
+        return inMemoryCache
+
+//        return inMemoryCache.filter {
+//            it.name.contains(query, true)
+//        }.sortedWith(compareByDescending<Result> { it.id }.thenBy { it.name })
     }
 
-    companion object {
-        private const val NETWORK_PAGE_SIZE = 50
-    }
 }
+
+

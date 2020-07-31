@@ -17,75 +17,43 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="8dp"
+    android:id="@+id/card"
+    android:layout_margin="8dp"
+    android:padding="24dp"
     app:cardCornerRadius="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="#DAC1C1"
     xmlns:tools="http://schemas.android.com/tools">
 
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:padding="@dimen/row_item_margin_vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/character_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,1:1"
+        android:src="@drawable/loading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:layout_marginTop="8dp"
         android:id="@+id/character_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/titleColor"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
         android:textSize="@dimen/repo_name_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="NAME"/>
-
-    <TextView
-        android:id="@+id/repo_location"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:maxLines="10"
-        android:paddingVertical="@dimen/row_item_margin_vertical"
-        android:textColor="?android:textColorPrimary"
-        android:textSize="@dimen/repo_description_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/character_name"
-        tools:ignore="UnusedAttribute"
-        tools:text="location"/>
-
-    <TextView
-        android:id="@+id/chapter_gender"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:paddingVertical="@dimen/row_item_margin_vertical"
-        android:text="gender"
-        android:textSize="@dimen/repo_description_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repo_location"
-        tools:ignore="RtlCompat"/>
+        app:layout_constraintTop_toBottomOf="@+id/character_image"
+        tools:text="NAME" />
 
 
-    <TextView
-        android:id="@+id/chapter_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/row_item_margin_vertical"
-        android:textSize="@dimen/repo_description_size"
-        app:layout_constraintBaseline_toBaselineOf="@+id/chapter_id"
-        app:layout_constraintEnd_toStartOf="@+id/chapter_id"
-        app:layout_constraintStart_toEndOf="@+id/chapter_gender"
-        tools:text="Status" />
-
-    <TextView
-        android:id="@+id/chapter_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/row_item_margin_vertical"
-        android:textSize="@dimen/repo_description_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repo_location"
-        tools:text="id"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
