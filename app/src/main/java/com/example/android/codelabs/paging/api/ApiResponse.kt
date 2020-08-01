@@ -18,7 +18,6 @@ package com.example.android.codelabs.paging.api
 
 import com.example.android.codelabs.paging.model.Info
 import com.example.android.codelabs.paging.model.Result
-import com.google.gson.annotations.SerializedName
 
 /**
  * Data class to hold repo responses from searchRepo API calls.

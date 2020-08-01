@@ -18,37 +18,34 @@ package com.example.android.codelabs.paging.ui
 
 import android.os.Bundle
 import android.util.Log
-import android.view.KeyEvent
 import android.view.View
-import android.view.inputmethod.EditorInfo
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
-import androidx.recyclerview.widget.*
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.android.codelabs.paging.Injection
-import com.example.android.codelabs.paging.databinding.ActivitySearchRepositoriesBinding
-import com.example.android.codelabs.paging.model.RepoSearchResult
-import kotlinx.android.synthetic.main.activity_search_repositories.*
+import com.example.android.codelabs.paging.databinding.ActivityMainBinding
+import com.example.android.codelabs.paging.model.GetCharactersResult
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import java.lang.Error
 
 @ExperimentalCoroutinesApi
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySearchRepositoriesBinding
-    private lateinit var viewModel: SearchRepositoriesViewModel
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: MainActivityViewModel
     private val adapter = CharacterAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySearchRepositoriesBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
         // get the view model
         viewModel = ViewModelProvider(this, Injection.provideViewModelFactory())
-                .get(SearchRepositoriesViewModel::class.java)
+                .get(MainActivityViewModel::class.java)
 
         setupScrollListener()
 
@@ -63,17 +60,16 @@ class MainActivity : AppCompatActivity() {
         binding.list.adapter = adapter
         viewModel.repoResult.observe(this) { result ->
             when (result) {
-                is RepoSearchResult.Success -> {
+                is GetCharactersResult.Success -> {
                     showEmptyList(result.data.isEmpty())
                     adapter.submitList(result.data)
                 }
-                is RepoSearchResult.Error -> {
-                    Log.e( "Init Adapter Error:", " RepoSearchResult")
+                is GetCharactersResult.Error -> {
+                    Log.e("Init Adapter Error:", " RepoSearchResult")
                 }
             }
         }
     }
-
 
     private fun showEmptyList(show: Boolean) {
         if (show) {
@@ -87,7 +83,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupScrollListener() {
         var layoutManager = binding.list.layoutManager
-        layoutManager = StaggeredGridLayoutManager( 2, StaggeredGridLayoutManager.VERTICAL)
+        layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         binding.list.addOnScrollListener(object : OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)

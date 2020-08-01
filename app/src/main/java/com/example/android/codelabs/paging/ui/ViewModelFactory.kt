@@ -26,9 +26,9 @@ import com.example.android.codelabs.paging.data.Repository
 class ViewModelFactory(private val repository: Repository) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(SearchRepositoriesViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(MainActivityViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return SearchRepositoriesViewModel(repository) as T
+            return MainActivityViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

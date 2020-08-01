@@ -18,7 +18,7 @@ package com.example.android.codelabs.paging.data
 
 import android.util.Log
 import com.example.android.codelabs.paging.api.ApiService
-import com.example.android.codelabs.paging.model.RepoSearchResult
+import com.example.android.codelabs.paging.model.GetCharactersResult
 import com.example.android.codelabs.paging.model.Result
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
@@ -41,7 +41,7 @@ class Repository(private val service: ApiService) {
 
     // keep channel of results. The channel allows us to broadcast updates so
     // the subscriber will have the latest data
-    private val searchResults = ConflatedBroadcastChannel<RepoSearchResult>()
+    private val searchResults = ConflatedBroadcastChannel<GetCharactersResult>()
 
     // keep the last requested page. When the request is successful, increment the page number.
     private var lastRequestedPage = STARTING_PAGE_INDEX
@@ -53,7 +53,7 @@ class Repository(private val service: ApiService) {
      * Search repositories whose names match the query, exposed as a stream of data that will emit
      * every time we get more data from the network.
      */
-    suspend fun getSearchResultStream(query: String): Flow<RepoSearchResult> {
+    suspend fun getSearchResultStream(query: String): Flow<GetCharactersResult> {
         Log.d("Search for character", "New query: $query")
         lastRequestedPage = 1
         inMemoryCache.clear()
@@ -80,18 +80,17 @@ class Repository(private val service: ApiService) {
         var successful = false
 
         try {
-            val response = service.loadData( lastRequestedPage)
-//            val response = service.searchRepos(query, lastRequestedPage)
+            val response = service.loadData(lastRequestedPage)
             Log.d("GithubRepository", "response $response")
-            val repos = response.results ?: emptyList()
+            val repos = response.results
             inMemoryCache.addAll(repos)
             val reposByName = reposByName(query)
-            searchResults.offer(RepoSearchResult.Success(reposByName))
+            searchResults.offer(GetCharactersResult.Success(reposByName))
             successful = true
         } catch (exception: IOException) {
-            searchResults.offer(RepoSearchResult.Error(exception))
+            searchResults.offer(GetCharactersResult.Error(exception))
         } catch (exception: HttpException) {
-            searchResults.offer(RepoSearchResult.Error(exception))
+            searchResults.offer(GetCharactersResult.Error(exception))
         }
         isRequestInProgress = false
         return successful
@@ -101,10 +100,6 @@ class Repository(private val service: ApiService) {
         // from the in memory cache select only the repos whose name or description matches
         // the query. Then order the results.
         return inMemoryCache
-
-//        return inMemoryCache.filter {
-//            it.name.contains(query, true)
-//        }.sortedWith(compareByDescending<Result> { it.id }.thenBy { it.name })
     }
 
 }

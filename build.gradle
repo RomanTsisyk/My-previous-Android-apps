@@ -58,5 +58,6 @@ ext {
     runnerVersion = '1.3.0-rc01'
     rulesVersion = '1.0.1'
     junitVersion = '4.13'
+    junit_ktxVersion = '1.1.1'
     espressoVersion = '3.3.0-rc01'
 }

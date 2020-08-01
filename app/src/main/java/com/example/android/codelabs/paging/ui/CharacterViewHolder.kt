@@ -16,6 +16,7 @@
 
 package com.example.android.codelabs.paging.ui
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
@@ -33,9 +34,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.android.codelabs.paging.R
-import com.example.android.codelabs.paging.R.anim.slide_from_top
 import com.example.android.codelabs.paging.R.anim.scale_xy
-import com.example.android.codelabs.paging.model.Repo
+import com.example.android.codelabs.paging.R.anim.slide_from_top
 import com.example.android.codelabs.paging.model.Result
 
 
@@ -52,17 +52,15 @@ class CharacterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     var scrollDirection = ScrollDirection.DOWN
 
 
-    init {
-        view.setOnClickListener {
-//            repo?.url?.let { url ->
-//                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-//                view.context.startActivity(intent)
-//            }
+    companion object {
+        fun create(parent: ViewGroup): CharacterViewHolder {
+            val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.repo_view_item, parent, false)
+            return CharacterViewHolder(view)
         }
     }
 
     fun bind(result: Result?) {
-
         if (result == null) {
             name.text = resources.getString(R.string.loading)
         } else {
@@ -82,11 +80,22 @@ class CharacterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 .into(avatar)
         setCardDecoration()
         animateView(card)
+
+        card.setOnClickListener {
+            val startIntent = Intent(it.context, CharacterDetailsActivity::class.java)
+            startIntent.putExtra("image", result.image)
+            startIntent.putExtra("gender", result.gender)
+            startIntent.putExtra("name", result.name)
+            startIntent.putExtra("status", result.status)
+            startIntent.putExtra("location_current", result.location.name)
+            startIntent.putExtra("location_origin", result.origin.name)
+            it.context.startActivity(startIntent)
+        }
     }
 
     private fun setCardDecoration() {
         try {
-            Log.i("avatar.drawable :" , avatar.drawable.toString())
+            Log.i("avatar.drawable :", avatar.drawable.toString())
             val drawable = avatar.drawable
             val bmp: Bitmap = (drawable.current as BitmapDrawable).bitmap
             Palette.from(bmp).generate { palette ->
@@ -97,16 +106,7 @@ class CharacterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             }
 
         } catch (e: Exception) {
-            println("Error $e");
-        }
-    }
-
-    companion object {
-
-        fun create(parent: ViewGroup): CharacterViewHolder {
-            val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.repo_view_item, parent, false)
-            return CharacterViewHolder(view)
+            println("Error $e")
         }
     }
 
@@ -115,8 +115,6 @@ class CharacterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val darkness = 1 - (0.299 * Color.red(color) + 0.587 * Color.green(color) + 0.114 * Color.blue(color)) / 255
         return darkness >= 0.5
     }
-
-
 
     fun animateView(viewAnimated: View) {
         if (viewAnimated.animation == null) {

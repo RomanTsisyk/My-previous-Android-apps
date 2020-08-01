@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.android.codelabs.paging.model.Result
+import com.example.android.codelabs.testutil.EspressoIdlingResource
 
 /**
  * Adapter for the list of repositories.
@@ -32,10 +33,12 @@ class CharacterAdapter : ListAdapter<Result, ViewHolder>(REPO_COMPARATOR) {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        EspressoIdlingResource.increment()
         val repoItem = getItem(position)
         if (repoItem != null) {
             (holder as CharacterViewHolder).bind(repoItem)
         }
+        EspressoIdlingResource.decrement()
     }
 
     companion object {

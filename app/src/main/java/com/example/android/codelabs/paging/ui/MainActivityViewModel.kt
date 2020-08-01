@@ -18,7 +18,8 @@ package com.example.android.codelabs.paging.ui
 
 import androidx.lifecycle.*
 import com.example.android.codelabs.paging.data.Repository
-import com.example.android.codelabs.paging.model.RepoSearchResult
+import com.example.android.codelabs.paging.model.GetCharactersResult
+import com.example.android.codelabs.testutil.EspressoIdlingResource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
@@ -28,17 +29,20 @@ import kotlinx.coroutines.launch
  * The ViewModel works with the [Repository] to get the data.
  */
 @ExperimentalCoroutinesApi
-class SearchRepositoriesViewModel(private val repository: Repository) : ViewModel() {
+class MainActivityViewModel(private val repository: Repository) : ViewModel() {
 
     companion object {
         private const val VISIBLE_THRESHOLD = 5
     }
 
     private val queryLiveData = MutableLiveData<String>()
-    val repoResult: LiveData<RepoSearchResult> = queryLiveData.switchMap { queryString ->
+    val repoResult: LiveData<GetCharactersResult> = queryLiveData.switchMap { queryString ->
         liveData {
+            EspressoIdlingResource.increment()
             val repos = repository.getSearchResultStream(queryString).asLiveData(Dispatchers.Main)
             emitSource(repos)
+            EspressoIdlingResource.decrement()
+
         }
     }
 
@@ -49,7 +53,7 @@ class SearchRepositoriesViewModel(private val repository: Repository) : ViewMode
         queryLiveData.postValue(queryString)
     }
 
-    fun listScrolled(visibleItemCount: Int,  totalItemCount: Int) {
+    fun listScrolled(visibleItemCount: Int, totalItemCount: Int) {
         if (visibleItemCount + VISIBLE_THRESHOLD >= totalItemCount) {
             val immutableQuery = queryLiveData.value
             if (immutableQuery != null) {
