@@ -34,4 +34,19 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    def lifecycle_version = "2.2.0"
+    def material_version = "1.1.0"
+    def recyclerview_version = "1.1.0"
+    def recyclerview_selection_version = "1.1.0-rc01"
+    def cardview_version = "1.0.0"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.cardview:cardview:$cardview_version"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:$recyclerview_selection_version"
+    implementation "com.google.android.material:material:$material_version"
+
+
 }
