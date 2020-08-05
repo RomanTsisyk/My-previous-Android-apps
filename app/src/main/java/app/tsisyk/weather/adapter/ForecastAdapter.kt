@@ -1,15 +1,12 @@
 package app.tsisyk.weather.adapter
 
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import app.tsisyk.weather.R
 import app.tsisyk.weather.network.model.ConsolidatedWeather
-import app.tsisyk.weather.ui.ForecastActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.waether_card_item.view.*
 import java.text.DecimalFormat
@@ -33,18 +30,10 @@ class ForecastAdapter(private val context: Context) :
         holder.maxTemp.text = df.format(list[position + 1].max_temp).toString() + " °C"
         holder.applicableDate.text = list[position + 1].applicable_date
         holder.minTemp.text = df.format(list[position + 1].min_temp).toString()
-//        val uri: Uri = Uri.parse()
 
         Glide.with(context)
             .load("https://www.metaweather.com/static/img/weather/png/64/${list[position].weather_state_abbr}.png")
             .into(holder.weatherIcon)
-
-        holder.rootView.setOnClickListener {
-            val intent = Intent(context, ForecastActivity::class.java)
-//            intent.putExtra("Location", list[position].woeid)
-//            intent.putExtra("name", list[position].title)
-            context.startActivity(intent)
-        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherViewHolder {
