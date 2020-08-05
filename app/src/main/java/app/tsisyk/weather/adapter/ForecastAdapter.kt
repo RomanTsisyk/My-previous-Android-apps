@@ -1,20 +1,26 @@
 package app.tsisyk.weather.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import app.tsisyk.weather.R
 import app.tsisyk.weather.network.model.ConsolidatedWeather
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.waether_card_item.view.*
 import java.text.DecimalFormat
 
+@Suppress("DEPRECATION")
 class ForecastAdapter(private val context: Context) :
     RecyclerView.Adapter<ForecastAdapter.WeatherViewHolder>() {
     private var list: List<ConsolidatedWeather> = ArrayList()
-    var df: DecimalFormat = DecimalFormat("#.#")
+    private var df: DecimalFormat = DecimalFormat("#.#")
+    private var BASE_URL = "https://www.metaweather.com/static/img/weather/png/64/"
 
     fun getWeather(list: List<ConsolidatedWeather>) {
         this.list = list
@@ -25,15 +31,19 @@ class ForecastAdapter(private val context: Context) :
         return list.size - 1
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
-        holder.minTemp.text = list[position + 1].min_temp.toString() + " °C"
-        holder.maxTemp.text = df.format(list[position + 1].max_temp).toString() + " °C"
+        holder.minTemp.text = "${df.format(list[position + 1].min_temp)} °C"
+        holder.maxTemp.text = "${df.format(list[position + 1].max_temp)} °C"
+        holder.weatherHumidity.text = "${(list[position + 1].humidity)} %"
         holder.applicableDate.text = list[position + 1].applicable_date
-        holder.minTemp.text = df.format(list[position + 1].min_temp).toString()
+
 
         Glide.with(context)
-            .load("https://www.metaweather.com/static/img/weather/png/64/${list[position].weather_state_abbr}.png")
+            .load("$BASE_URL${list[position].weather_state_abbr}.png")
             .into(holder.weatherIcon)
+        validColor(holder.minTemp)
+        validColor(holder.maxTemp)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherViewHolder {
@@ -52,7 +62,19 @@ class ForecastAdapter(private val context: Context) :
         var maxTemp = card.weather_max_temp
         var applicableDate = card.weather_date
         var weatherIcon = card.weather_icon
+        var weatherHumidity = card.weather_humidity
         var rootView = card.card_weather
     }
 
+
 }
+
+fun validColor(view: TextView) {
+    var temp = view.text.toString().dropLast(3).toDouble()
+    when {
+        (temp <= 20) -> view.setTextColor(BLUE)
+        (temp in 10..20) -> view.setTextColor(BLACK)
+        (20 < temp) -> view.setTextColor(RED)
+    }
+}
+

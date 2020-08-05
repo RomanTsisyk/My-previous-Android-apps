@@ -1,40 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@android:color/white"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@android:color/white">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="@dimen/small_image_size"
-        android:layout_height="@dimen/small_image_size"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_applicable_date_pop_up"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/text_weather_state_name_pop_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="weather_state_name"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="@dimen/small_image_size"
         android:layout_height="@dimen/small_image_size"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/weather_vane"/>
 
     <TextView
         android:id="@+id/text_wind_direction_compass_pop_up"
@@ -46,65 +29,15 @@
         app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toTopOf="@+id/imageView7" />
 
-    <TextView
-        android:id="@+id/text_applicable_date_pop_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="applicable_date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_title_pop_up" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="@dimen/small_image_size"
-        android:layout_height="@dimen/small_image_size"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/text_min_temp_pop_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="min_temp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="@dimen/small_image_size"
-        android:layout_height="@dimen/small_image_size"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/text_max_temp_pop_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="max_temp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9" />
-
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="@dimen/small_image_size"
         android:layout_height="@dimen/small_image_size"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        android:src="@drawable/wind" />
 
     <TextView
         android:id="@+id/text_wind_speed_pop_up"
@@ -121,10 +54,10 @@
         android:layout_width="@dimen/small_image_size"
         android:layout_height="@dimen/small_image_size"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/windsock" />
 
     <TextView
         android:id="@+id/text_wind_direction_pop_up"
@@ -141,10 +74,10 @@
         android:layout_width="@dimen/small_image_size"
         android:layout_height="@dimen/small_image_size"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView11"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/barometer"/>
 
     <TextView
         android:id="@+id/text_air_pressure_pop_up"
@@ -161,10 +94,10 @@
         android:layout_width="@dimen/small_image_size"
         android:layout_height="@dimen/small_image_size"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView12"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/clouds_and_sun" />
 
     <TextView
         android:id="@+id/text_humidity_pop_up"
@@ -181,10 +114,10 @@
         android:layout_width="@dimen/small_image_size"
         android:layout_height="@dimen/small_image_size"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView13"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/weather"/>
 
     <TextView
         android:id="@+id/text_visibility_pop_up"
@@ -201,28 +134,19 @@
         android:layout_width="@dimen/small_image_size"
         android:layout_height="@dimen/small_image_size"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView14"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/humidity"/>
 
     <TextView
         android:id="@+id/text_predictability_pop_up"
-        android:layout_width="75dp"
-        android:layout_height="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="predictability"
         app:layout_constraintBottom_toBottomOf="@+id/imageView15"
         app:layout_constraintStart_toEndOf="@+id/imageView15"
         app:layout_constraintTop_toTopOf="@+id/imageView15" />
-
-    <TextView
-        android:id="@+id/text_title_pop_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+

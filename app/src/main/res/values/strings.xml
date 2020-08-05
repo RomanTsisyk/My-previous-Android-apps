@@ -1,13 +1,22 @@
 <resources>
-    <string name="app_name">weather</string>
+    <string name="app_name">Weather</string>
     <string name="weather">Weather</string>
     <string name="title_activity_detail_weather">DetailWeatherActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="wind_speed">"wind speed: "</string>
+    <string name="wind_direction_compass">wind direction compass :</string>
+    <string name="wind_directio">wind direction: </string>
+    <string name="air_pressure">"air pressure: "</string>
+    <string name="humidity">humidity: </string>
+    <string name="visibility">visibility: </string>
+    <string name="predictability">predictability: </string>
+    <string name="type_city_name">Type city name</string>
+    <string name="validate_name">Validate name</string>
+    <string name="baseUrl">https://www.metaweather.com/static/img/weather/png/</string>
+    <string name="sunrise">"SunRise : "</string>
+    <string name="sunset">"SunSet : "</string>
+    <string name="undo">Undo</string>
+    <string name="part_2">\n Click here, if you want to check it again!</string>
+    <string name="part_1">Last time you was searching for </string>
+    <string name="yes">Yes</string>
 </resources>

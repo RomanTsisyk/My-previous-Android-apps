@@ -10,7 +10,7 @@
 
         android:id="@+id/currentWeather"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="128dp"
         android:layout_margin="@dimen/medium_border"
         android:orientation="horizontal"
         app:cardCornerRadius="32dp"
@@ -20,14 +20,13 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="128dp">
+            android:layout_height="wrap_content">
 
             <ImageView
-                android:foregroundGravity="center_vertical"
-                android:layout_marginStart="@dimen/medium_border"
                 android:id="@+id/currentWeather_icon"
                 android:layout_width="@dimen/big_image_size"
                 android:layout_height="@dimen/big_image_size"
+                android:layout_marginStart="@dimen/medium_border"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -44,13 +43,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/current_date" />
 
             <TextView
-                android:id="@+id/currentWeather_temp"
+                android:id="@+id/currentWeather_temp_max"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="0"
-                app:layout_constraintEnd_toEndOf="@+id/cityName"
-                app:layout_constraintStart_toStartOf="@+id/cityName"
+                android:text="temp_max"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/current_weather_condition" />
 
             <TextView
@@ -67,12 +65,58 @@
                 android:id="@+id/current_weather_condition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="@+id/cityName"
                 app:layout_constraintStart_toStartOf="@+id/cityName"
                 app:layout_constraintTop_toBottomOf="@+id/cityName" />
 
+            <TextView
+                android:id="@+id/currentWeather_temp_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="temp_min"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/current_weather_condition" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text=" - "
+                app:layout_constraintEnd_toEndOf="@+id/current_weather_condition"
+                app:layout_constraintStart_toStartOf="@+id/current_weather_condition"
+                app:layout_constraintTop_toBottomOf="@+id/current_weather_condition" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/inflateView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium_border"
+        android:visibility="gone"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentWeather"
+        tools:ignore="MissingConstraints">
+
+        <include
+            layout="@layout/weather_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/currentWeather_icon" />
     </androidx.cardview.widget.CardView>
 
     <ProgressBar
@@ -99,7 +143,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentWeather" />
 
-
     <androidx.cardview.widget.CardView
 
         android:id="@+id/city_information"
@@ -108,14 +151,14 @@
         android:layout_margin="@dimen/medium_border"
         android:orientation="horizontal"
         app:cardCornerRadius="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:padding="@dimen/minimal_border"
-            android:layout_height="96dp">
+            android:layout_height="184dp"
+            android:padding="@dimen/minimal_border">
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -141,11 +184,11 @@
                 android:id="@+id/imageView3"
                 android:layout_width="@dimen/small_image_size"
                 android:layout_height="@dimen/small_image_size"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:src="@drawable/sunset"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
-                app:layout_constraintTop_toTopOf="@+id/imageView2" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
             <TextView
                 android:id="@+id/text_sun_set"
@@ -162,10 +205,8 @@
                 android:layout_width="@dimen/small_image_size"
                 android:layout_height="@dimen/small_image_size"
                 android:layout_marginStart="@dimen/medium_border"
-                android:layout_marginTop="@dimen/minimal_border"
-                android:layout_marginBottom="@dimen/medium_border"
+                android:layout_marginTop="8dp"
                 android:src="@drawable/temperature"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -183,11 +224,10 @@
                 android:id="@+id/imageView5"
                 android:layout_width="@dimen/small_image_size"
                 android:layout_height="@dimen/small_image_size"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/location"
                 app:layout_constraintStart_toStartOf="@+id/imageView4"
-                app:layout_constraintTop_toTopOf="@+id/imageView4"
-                android:src="@drawable/location" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
             <TextView
                 android:id="@+id/text_location_parent"
