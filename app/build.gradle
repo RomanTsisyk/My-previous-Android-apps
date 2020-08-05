@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "app.tsisyk.empikweather"
+        applicationId "app.tsisyk.weather"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -21,6 +21,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
 }
 
@@ -39,14 +44,28 @@ dependencies {
     def recyclerview_version = "1.1.0"
     def recyclerview_selection_version = "1.1.0-rc01"
     def cardview_version = "1.0.0"
+    def view_model_version = "2.2.0-rc02"
+    def glide_version = "4.11.0"
+    def retrofit_version = "2.9.0"
+
 
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     annotationProcessor "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$view_model_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$view_model_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$view_model_version"
+
     implementation "androidx.cardview:cardview:$cardview_version"
     implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
     // For control over item selection of both touch and mouse driven selection
     implementation "androidx.recyclerview:recyclerview-selection:$recyclerview_selection_version"
     implementation "com.google.android.material:material:$material_version"
+
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
 
 }

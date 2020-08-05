@@ -1,4 +1,4 @@
-package app.tsisyk.empikweather
+package app.tsisyk.weather
 
 import org.junit.Test
 

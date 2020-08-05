@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">EmpikWeather</string>
+    <string name="app_name">weather</string>
     <string name="weather">Weather</string>
 </resources>

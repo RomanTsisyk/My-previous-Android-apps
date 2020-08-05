@@ -1,18 +1,21 @@
-package app.tsisyk.empikweather.ui
+package app.tsisyk.weather.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import app.tsisyk.empikweather.R
+import app.tsisyk.weather.R
+import app.tsisyk.weather.ui.MainActivity
 
 class SplashActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
         Handler().postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }, 2000)
     }
 }
