@@ -17,10 +17,6 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
         this.locationList = repository.locationList
     }
 
-//
-//    fun changeState(){
-//        repository.changeState()
-//    }
 
     fun searchLocation(searchString: String){
         repository.searchLocation(searchString)

@@ -46,7 +46,6 @@ class ForecastActivity : AppCompatActivity() {
                     putInt("CITY_woeid", location)
                     apply()
                     Log.i( "NAME" , locationName)
-
                 }
             }
         } else {

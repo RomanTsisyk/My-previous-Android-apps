@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color.BLUE
 import android.os.Bundle
+import android.view.Gravity
+import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
@@ -30,9 +32,9 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             if (search_city.text!!.isNotEmpty()) {
-                if (search_city.text.length > 2) {
+//                if (search_city.text.length > 2) {
                     viewModel.searchLocation(search_city.text.toString())
-                }
+//                }
             }
         }
 
@@ -58,7 +60,7 @@ class MainActivity : AppCompatActivity() {
     private fun showSnackBar(text: String) {
         var snackBar = Snackbar.make(
             findViewById(android.R.id.content),
-            getString(R.string.part_1) + text + getString(R.string.part_2), 10_000
+            getString(R.string.part_1) + text + getString(R.string.part_2), 5_000
         )
         snackBar.setAction(getString(R.string.yes)) { _ ->
             val intent = Intent(this, ForecastActivity::class.java)
