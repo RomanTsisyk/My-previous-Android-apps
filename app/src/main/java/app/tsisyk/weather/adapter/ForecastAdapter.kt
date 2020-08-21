@@ -70,9 +70,10 @@ class ForecastAdapter(private val context: Context) :
 }
 
 fun validColor(view: TextView) {
-    var temp = view.text.toString().dropLast(3).toDouble()
+    var temp = view.text.toString().dropLast(3)
+        .split(",")[0].toDouble()
     when {
-        (temp <= 20) -> view.setTextColor(BLUE)
+        (temp < 10) -> view.setTextColor(BLUE)
         (temp in 10..20) -> view.setTextColor(BLACK)
         (20 < temp) -> view.setTextColor(RED)
     }
