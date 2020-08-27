@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import app.tsisyk.weather.R
+import app.tsisyk.forecast.R
 import app.tsisyk.forecast.ui.MainActivity
 
 class SplashActivity : AppCompatActivity() {

@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import app.tsisyk.weather.R
+import app.tsisyk.forecast.R
 import app.tsisyk.forecast.network.model.ConsolidatedWeather
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar

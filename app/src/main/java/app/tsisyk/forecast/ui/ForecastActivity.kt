@@ -9,8 +9,8 @@ import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import app.tsisyk.weather.R
-import app.tsisyk.weather.R.string.*
+import app.tsisyk.forecast.R
+import app.tsisyk.forecast.R.string.*
 import app.tsisyk.forecast.adapter.ForecastAdapter
 import app.tsisyk.forecast.adapter.validColor
 import app.tsisyk.forecast.viewModel.ForecastActivityViewModel

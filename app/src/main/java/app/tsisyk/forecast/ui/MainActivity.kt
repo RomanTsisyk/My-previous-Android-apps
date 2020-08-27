@@ -9,7 +9,7 @@ import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import app.tsisyk.weather.R
+import app.tsisyk.forecast.R
 import app.tsisyk.forecast.adapter.CityAdapter
 import app.tsisyk.forecast.viewModel.MainActivityViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         if (text !== "null") {
             var snackBar = Snackbar.make(
                 findViewById(android.R.id.content),
-                getString(R.string.part_1) + text + getString(R.string.part_2), 5_000
+                getString(R.string.part_1) + " " + text + "\n" + getString(R.string.part_2), 5_000
             )
             snackBar.setAction(getString(R.string.yes)) { _ ->
                 val intent = Intent(this, ForecastActivity::class.java)

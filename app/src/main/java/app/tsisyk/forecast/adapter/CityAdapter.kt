@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import app.tsisyk.weather.R
-import app.tsisyk.weather.R.anim.scale_xy
-import app.tsisyk.weather.R.anim.slide_from_top
+import app.tsisyk.forecast.R
+import app.tsisyk.forecast.R.anim.scale_xy
+import app.tsisyk.forecast.R.anim.slide_from_top
 import app.tsisyk.forecast.network.model.Location
 import app.tsisyk.forecast.ui.ForecastActivity
 import kotlinx.android.synthetic.main.city_card_item.view.*
