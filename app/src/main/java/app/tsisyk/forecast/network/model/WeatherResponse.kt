@@ -1,4 +1,4 @@
-package app.tsisyk.weather.network.model
+package app.tsisyk.forecast.network.model
 
 
 data class WeatherResponse(

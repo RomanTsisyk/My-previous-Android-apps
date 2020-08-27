@@ -1,7 +1,7 @@
-package app.tsisyk.weather.network
+package app.tsisyk.forecast.network
 
-import app.tsisyk.weather.network.model.WeatherResponse
-import app.tsisyk.weather.network.model.Location
+import app.tsisyk.forecast.network.model.WeatherResponse
+import app.tsisyk.forecast.network.model.Location
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

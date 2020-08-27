@@ -1,4 +1,4 @@
-package app.tsisyk.weather.adapter
+package app.tsisyk.forecast.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import app.tsisyk.weather.R
-import app.tsisyk.weather.network.model.ConsolidatedWeather
+import app.tsisyk.forecast.network.model.ConsolidatedWeather
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.waether_card_item.view.*

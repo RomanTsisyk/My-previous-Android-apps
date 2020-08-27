@@ -35,7 +35,8 @@
             android:id="@+id/weather_icon"
             android:layout_gravity="center_horizontal"
             android:layout_width="@dimen/medium_image_size"
-            android:layout_height="@dimen/medium_image_size" />
+            android:layout_height="@dimen/medium_image_size"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/weather_min_temp"

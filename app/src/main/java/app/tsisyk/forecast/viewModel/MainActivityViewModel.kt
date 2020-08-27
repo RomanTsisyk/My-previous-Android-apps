@@ -1,7 +1,7 @@
-package app.tsisyk.weather.viewModel
+package app.tsisyk.forecast.viewModel
 
-import app.tsisyk.weather.network.model.Location
-import app.tsisyk.weather.repository.MainActivityRepository
+import app.tsisyk.forecast.network.model.Location
+import app.tsisyk.forecast.repository.MainActivityRepository
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData

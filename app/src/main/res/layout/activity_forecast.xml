@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ForecastActivity">
+    tools:context="app.tsisyk.forecast.ui.ForecastActivity">
 
     <androidx.cardview.widget.CardView
 
@@ -29,7 +29,8 @@
                 android:layout_marginStart="@dimen/medium_border"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/cityName"
@@ -121,8 +122,8 @@
 
     <ProgressBar
         android:id="@+id/details_progress"
-        android:layout_width="@dimen/progerss_bar_size"
-        android:layout_height="@dimen/progerss_bar_size"
+        android:layout_width="@dimen/progress_bar_size"
+        android:layout_height="@dimen/progress_bar_size"
         android:layout_centerInParent="true"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -168,7 +169,8 @@
                 android:layout_marginTop="@dimen/minimal_border"
                 android:src="@drawable/sunrise"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/text_sun_rise"
@@ -188,7 +190,8 @@
                 android:layout_marginTop="8dp"
                 android:src="@drawable/sunset"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/text_sun_set"
@@ -208,7 +211,8 @@
                 android:layout_marginTop="8dp"
                 android:src="@drawable/temperature"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/text_timezone"
@@ -227,7 +231,8 @@
                 android:layout_marginTop="8dp"
                 android:src="@drawable/location"
                 app:layout_constraintStart_toStartOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/text_location_parent"

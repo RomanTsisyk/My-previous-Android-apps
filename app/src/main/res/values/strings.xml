@@ -19,4 +19,5 @@
     <string name="part_2">  Click here, if you want to check it again!</string>
     <string name="part_1">Last time you was searching for </string>
     <string name="yes">Yes</string>
-</resources>
+    <string name="welcome" translatable="false">Welcome friend. I hope you will like this appp</string>
+    </resources>

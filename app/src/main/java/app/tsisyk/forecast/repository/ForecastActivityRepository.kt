@@ -1,11 +1,11 @@
-package app.tsisyk.weather.repository
+package app.tsisyk.forecast.repository
 
 import android.app.Application
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import app.tsisyk.weather.network.BASE_URL
-import app.tsisyk.weather.network.WeatherNetwork
-import app.tsisyk.weather.network.model.WeatherResponse
+import app.tsisyk.forecast.network.BASE_URL
+import app.tsisyk.forecast.network.WeatherNetwork
+import app.tsisyk.forecast.network.model.WeatherResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

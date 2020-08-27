@@ -1,4 +1,4 @@
-package app.tsisyk.weather.ui
+package app.tsisyk.forecast.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,9 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import app.tsisyk.weather.R
 import app.tsisyk.weather.R.string.*
-import app.tsisyk.weather.adapter.ForecastAdapter
-import app.tsisyk.weather.adapter.validColor
-import app.tsisyk.weather.viewModel.ForecastActivityViewModel
+import app.tsisyk.forecast.adapter.ForecastAdapter
+import app.tsisyk.forecast.adapter.validColor
+import app.tsisyk.forecast.viewModel.ForecastActivityViewModel
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_forecast.*
 import kotlinx.android.synthetic.main.weather_detail.*

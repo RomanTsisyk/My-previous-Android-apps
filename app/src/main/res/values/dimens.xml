@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="minimal_border">8dp</dimen>
-    <dimen name="progerss_bar_size">100dp</dimen>
+    <dimen name="progress_bar_size">100dp</dimen>
     <dimen name="medium_border">16dp</dimen>
     <dimen name="medium_image_size">64dp</dimen>
     <dimen name="big_image_size">96dp</dimen>

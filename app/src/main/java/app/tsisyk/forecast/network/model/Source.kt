@@ -1,4 +1,4 @@
-package app.tsisyk.weather.network.model
+package app.tsisyk.forecast.network.model
 
 data class Source(
     val crawl_rate: Int,

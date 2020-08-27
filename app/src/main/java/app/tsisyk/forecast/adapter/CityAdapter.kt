@@ -1,4 +1,4 @@
-package app.tsisyk.weather.adapter
+package app.tsisyk.forecast.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import app.tsisyk.weather.R
 import app.tsisyk.weather.R.anim.scale_xy
 import app.tsisyk.weather.R.anim.slide_from_top
-import app.tsisyk.weather.network.model.Location
-import app.tsisyk.weather.ui.ForecastActivity
+import app.tsisyk.forecast.network.model.Location
+import app.tsisyk.forecast.ui.ForecastActivity
 import kotlinx.android.synthetic.main.city_card_item.view.*
 
 

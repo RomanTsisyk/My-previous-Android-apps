@@ -1,10 +1,10 @@
-package app.tsisyk.weather.viewModel
+package app.tsisyk.forecast.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import app.tsisyk.weather.network.model.WeatherResponse
-import app.tsisyk.weather.repository.ForecastActivityRepository
+import app.tsisyk.forecast.network.model.WeatherResponse
+import app.tsisyk.forecast.repository.ForecastActivityRepository
 
 class ForecastActivityViewModel(application: Application) : AndroidViewModel(application) {
 
