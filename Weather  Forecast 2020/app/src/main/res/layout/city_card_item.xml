@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/child_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/minimal_border"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="@dimen/minimal_border">
+
+
+    <ImageView
+        android:layout_margin="@dimen/minimal_border"
+        android:layout_width="@dimen/small_image_size"
+        android:layout_height="@dimen/small_image_size"
+        android:layout_gravity="center_vertical |left"
+        android:background="@drawable/ic_skyline"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/tv_location_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/minimal_border"
+        android:paddingLeft="48dp"
+        android:text="Location"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+</androidx.cardview.widget.CardView>

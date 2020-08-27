@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_weather"
+    android:layout_width="96dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingTop="@dimen/minimal_border"
+    android:paddingBottom="@dimen/minimal_border"
+    android:layout_margin="@dimen/minimal_border"
+    app:cardCornerRadius="@dimen/minimal_border"
+    app:cardElevation="@dimen/minimal_border">
+
+    <LinearLayout
+        android:paddingTop="@dimen/minimal_border"
+        android:layout_marginBottom="@dimen/minimal_border"
+        android:layout_width="96dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/weather_date"
+            style="@style/myText"
+            android:text="Date" />
+
+
+        <TextView
+            android:id="@+id/weather_max_temp"
+            style="@style/myText"
+            android:text="max_temp" />
+
+
+        <ImageView
+            android:id="@+id/weather_icon"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="@dimen/medium_image_size"
+            android:layout_height="@dimen/medium_image_size"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/weather_min_temp"
+            style="@style/myText"
+            android:text="min_temp" />
+
+        <TextView
+            android:id="@+id/weather_humidity"
+            style="@style/myText"
+            android:text="humidity" />
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"Pogoda "</string>
+    <string name="weather">"Pogoda "</string>
+    <string name="wind_speed">"prędkość wiatru: "</string>
+    <string name="wind_direction_compass">"kompas kierunku wiatru: "</string>
+    <string name="wind_directio">" kierunek wiatru: "</string>
+    <string name="air_pressure">"ciśnienie powietrza: "</string>
+    <string name="humidity">"wilgotność: "</string>
+    <string name="predictability">"przewidywalność: "</string>
+    <string name="type_city_name">Wpisz nazwę miasta</string>
+    <string name="validate_name">Sprawdź poprawność nazwy</string>
+    <string name="visibility">"widoczność: "</string>
+    <string name="yes">"Tak "</string>
+    <string name="part_1">"Ostatnio szukałeś "</string>
+    <string name="part_2">" Kliknij tutaj, jeśli chcesz to sprawdzić ponownie! "</string>
+    <string name="undo">"Cofnij "</string>
+    <string name="sunrise">"Wschód słońca: "</string>
+    <string name="sunset">"Zachód słońca: "</string>
+</resources>
