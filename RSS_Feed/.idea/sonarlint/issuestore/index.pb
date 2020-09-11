@@ -1,0 +1,29 @@
+
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+p
+@app/src/main/java/tsisyk/app/rssfeed/common/HTTPDataHandler.java,9\5\957fe7ab4db2983c31a88cef3051b6454abce247
+b
+2app/src/main/java/tsisyk/app/rssfeed/model/Item.kt,e\8\e8dc9a4c133de4fcda21ca30a800c889ade77fc9
+b
+2app/src/main/java/tsisyk/app/rssfeed/model/Feed.kt,a\5\a547ddaba17de57276e75dfb8a5d3a6231d4f18d
+g
+7app/src/main/java/tsisyk/app/rssfeed/model/Promotion.kt,4\c\4c22ffb4c823082172afb1b398b085956332d374
+g
+7app/src/main/java/tsisyk/app/rssfeed/model/Enclosure.kt,d\c\dc62f23ff37f18cc3df5087ac0281fc140365a90
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+n
+>app/src/main/java/tsisyk/app/rssfeed/adapter/FeedViewHolder.kt,b\b\bb5b66b018b931fb5b1c7e1c499f7bb326963624
+k
+;app/src/main/java/tsisyk/app/rssfeed/adapter/FeedAdapter.kt,7\8\7884cfa4d30f18a2f42873f1e6192f34aa1c877a
+d
+4app/src/main/java/tsisyk/app/rssfeed/MainActivity.kt,6\3\63c1317a1f3a259b66e6527c32a89a64f2285642
+c
+3app/src/main/java/tsisyk/app/rssfeed/WebActivity.kt,e\3\e345f170114520e19418b0ac3e77f10136bd134c
